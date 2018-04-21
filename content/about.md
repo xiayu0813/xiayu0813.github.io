@@ -1,21 +1,13 @@
 ---
 title: "关于"
 date: 2017-08-20T21:38:52+08:00
-lastmod: 2017-08-28T21:41:52+08:00
+lastmod: 2018-04-22T00:30:00+08:00
 menu: "main"
 weight: 50
 
 ---
 
-Hugo is a static site engine written in Go.
+使用[Hugo](https://gohugo.io/)创建的静态网站，主题采用[even](https://github.com/olOwOlo/hugo-theme-even)。
 
-
-It makes use of a variety of open source projects including:
-
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+记录一些学习内容。
 
