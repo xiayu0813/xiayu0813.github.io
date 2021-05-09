@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WPF 数据绑定 on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/wpf-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+    <description>Recent content in WPF 数据绑定 on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Jul 2014 22:03:48 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/wpf-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据绑定Data Binding</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/wpf/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9Adata-binding/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/wpf/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9Adata-binding/</guid>
+      <description>WPF的一个特点是数据驱动界面，就是数据是底层、是心脏，数据变了作为表层的UI就会跟着变、将数据展现给用户；如果用户修改了UI元素上的值，相</description>
+    </item>
+    
+  </channel>
+</rss>

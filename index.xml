@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/</link>
+    <description>Recent content on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 22:59:17 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于</title>
+      <link>http://www.aaronxia.com/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/about/</guid>
+      <description>使用Hugo创建的静态网站，主题采用even。 TravisCI 状态： 记录一些学习内容。</description>
+    </item>
+    
+    <item>
+      <title>manjaro配置</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]</description>
+    </item>
+    
+    <item>
+      <title>清理虚拟机空间</title>
+      <link>http://www.aaronxia.com/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/</guid>
+      <description>清理虚拟机的空间 vmware下的虚拟机长时间使用后会变大，可以清理不用的空间，减少磁盘占用，便于复制。 当前使用的虚拟机为manjaro lin</description>
+    </item>
+    
+    <item>
+      <title>两个电脑共享鼠标键盘</title>
+      <link>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/%E4%B8%A4%E4%B8%AA%E7%94%B5%E8%84%91%E5%85%B1%E4%BA%AB%E9%BC%A0%E6%A0%87%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sun, 06 May 2018 20:52:11 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/%E4%B8%A4%E4%B8%AA%E7%94%B5%E8%84%91%E5%85%B1%E4%BA%AB%E9%BC%A0%E6%A0%87%E9%94%AE%E7%9B%98/</guid>
+      <description>安装 有两个笔记本，一个运行win10，一个运行monjaro linux，来回切换很麻烦，网上搜索了下共享鼠标键盘的方法，发现支持linux系</description>
+    </item>
+    
+    <item>
+      <title>Hugo使用及部署</title>
+      <link>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/hugo%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 05 May 2018 22:02:50 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/hugo%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%83%A8%E7%BD%B2/</guid>
+      <description>参考 Hugo借助Travis CI实现GitHub Pages自动部署实践 hugo官方文档 Hexo遇上Travis-CI：可能是最通俗易懂的自动</description>
+    </item>
+    
+    <item>
+      <title>QT延时</title>
+      <link>http://www.aaronxia.com/post/wiki/qt%E5%BB%B6%E6%97%B6/</link>
+      <pubDate>Thu, 02 Apr 2015 15:39:07 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/qt%E5%BB%B6%E6%97%B6/</guid>
+      <description>参考 Linux公社：如何让Qt程序Sleep Norckon&amp;rsquo;s blog:QT延时器函数 The Sleep Function zjcxl的博客:QT延时方法 使用QTime 1 2 3 4 QTime time; time.start(); while(time.elapsed()&amp;lt;1000) // 1</description>
+    </item>
+    
+    <item>
+      <title>ROS Nodes,Topics,Services and Parameters</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-nodes-topics-services-and-parameters/</link>
+      <pubDate>Sun, 22 Mar 2015 10:18:26 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-nodes-topics-services-and-parameters/</guid>
+      <description>参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统</description>
+    </item>
+    
+    <item>
+      <title>ROS Package</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-package/</link>
+      <pubDate>Sat, 21 Mar 2015 18:44:08 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-package/</guid>
+      <description>参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统</description>
+    </item>
+    
+    <item>
+      <title>ROS安装</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 21 Mar 2015 16:59:18 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros%E5%AE%89%E8%A3%85/</guid>
+      <description>参考 官方wiki 环境说明 操作系统： Ubuntu 14.04.2 ROS： ROS Indigo 安装 直接安照ros wiki来做。 配置软件源（默认的已经允许，不用再配置） 添加ros软件源并</description>
+    </item>
+    
+    <item>
+      <title>fedora21配置</title>
+      <link>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 27 Dec 2014 09:58:14 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu</description>
+    </item>
+    
+    <item>
+      <title>OpenWrt编译</title>
+      <link>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Wed, 17 Dec 2014 10:25:30 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/</guid>
+      <description>参考文档 官方Wiki: OpenWrt Buildroot – Installation 官方Wiki: OpenWrt Buildroot – Usage 官方Wiki: Image Generator (Image Builder) 官方Wiki: Using the SDK 开源中国: 编译HG255D的openwrt固件</description>
+    </item>
+    
+    <item>
+      <title>linaro ubuntu编译opencv</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/</link>
+      <pubDate>Wed, 03 Dec 2014 15:24:54 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/</guid>
+      <description>主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程</description>
+    </item>
+    
+    <item>
+      <title>C语言基础</title>
+      <link>http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 18 Sep 2014 19:25:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</guid>
+      <description>参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1</description>
+    </item>
+    
+    <item>
+      <title>FreeRTOS移植-STM32F103</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-stm32f103/</link>
+      <pubDate>Sun, 14 Sep 2014 09:20:22 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-stm32f103/</guid>
+      <description>移植环境说明 keil MDK 4.74 FreeRTOS v8.12 移植目标：STM32F103CBT6 使用STM32F10x标准固件库3.5：STM32F10x_StdPeriph_L</description>
+    </item>
+    
+    <item>
+      <title>FreeRTOS移植-系统基础</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 31 Aug 2014 09:47:43 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</guid>
+      <description>编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表</description>
+    </item>
+    
+    <item>
+      <title>git常用命令</title>
+      <link>http://www.aaronxia.com/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 28 Aug 2014 15:35:04 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 - git clone &amp;lt;url&amp;gt; 克隆远程版本库 - git init 初始化本地版本库 - git add . 跟踪所有改动过的文件 - git commit -m &amp;#34;commit message&amp;#34; 提交所有更新过的</description>
+    </item>
+    
+    <item>
+      <title>对freemind主题所做的修改</title>
+      <link>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/%E5%AF%B9freemind%E4%B8%BB%E9%A2%98%E6%89%80%E5%81%9A%E7%9A%84%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Sat, 16 Aug 2014 16:43:05 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/%E5%AF%B9freemind%E4%B8%BB%E9%A2%98%E6%89%80%E5%81%9A%E7%9A%84%E4%BF%AE%E6%94%B9/</guid>
+      <description>现已改用Jackman主题（做了些许修改）* 修改分类方式 原主题的侧边样的分类是无层次的分类，在此改为层次型的分类方式，好在hexo原本就支持</description>
+    </item>
+    
+    <item>
+      <title>6410的DDR使用</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/6410%E7%9A%84ddr%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/6410%E7%9A%84ddr%E4%BD%BF%E7%94%A8/</guid>
+      <description>6410使用DRAM控制器对DDR进行操作。在程序开始时要根据DDR的参数设置DRAM控制器。 （DDR SDRAM：Double Rate Synchronous Dynamic Random Access Me</description>
+    </item>
+    
+    <item>
+      <title>ARM关键汇编指令</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/arm%E5%85%B3%E9%94%AE%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/arm%E5%85%B3%E9%94%AE%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4/</guid>
+      <description>协处理器指令MCR/MRC MCR指令将ARM处理器的寄存器中的数据传送到协处理器的寄存器中。如果协处理器不能成功地执行该操作，将产生未定义的</description>
+    </item>
+    
+    <item>
+      <title>GUNARM汇编语言学习问题及方法</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/gunarm%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98%E5%8F%8A%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/gunarm%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98%E5%8F%8A%E6%96%B9%E6%B3%95/</guid>
+      <description>在学习GUN-ARM的裸机程序过程中存在一些问题，发现了一些之前没有注意的知识点 算术、逻辑运算指令可选择使用S后缀以影响状态标志位，尤其在使</description>
+    </item>
+    
+    <item>
+      <title>MFC的线程</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/cc&#43;&#43;/mfc%E7%9A%84%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/cc&#43;&#43;/mfc%E7%9A%84%E7%BA%BF%E7%A8%8B/</guid>
+      <description>MFC的线程 MFC的线程分为用户界面线程和辅助线程，用户界面线程有消息响应机制，而普通的辅助线程没有消息响应。 在MFC中，一般用全局函数Af</description>
+    </item>
+    
+    <item>
+      <title>NAND FLASH</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/nand-flash/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/nand-flash/</guid>
+      <description>Nand flash 只有8条地址线，需要分别发出地址256M * 8bit 特点 命令、地址、数据复用：CLE为高表示发送的是命令，ALE为高表示发送的是地址，两者均为低</description>
+    </item>
+    
+    <item>
+      <title>S3C6410系统结构</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/s3c6410%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/s3c6410%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</guid>
+      <description>S3C6410系统结构 S3C6410使用64/32位的内部总线结构，由AXI，AHB和APB总线组成。 AHB总线用于访问高速外设，如存储器；</description>
+    </item>
+    
+    <item>
+      <title>tiny6410点亮LED</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/tiny6410%E7%82%B9%E4%BA%AEled/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/tiny6410%E7%82%B9%E4%BA%AEled/</guid>
+      <description>裸机程序分为启动代码和C函数 启动代码完成硬件初始化并调用C函数 6410的硬件初始化分为设置CPU（告诉CPU外设的地址范围）和关看门狗（3秒</description>
+    </item>
+    
+    <item>
+      <title>万能的makefile</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E4%B8%87%E8%83%BD%E7%9A%84makefile/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E4%B8%87%E8%83%BD%E7%9A%84makefile/</guid>
+      <description>万能makefile的要点对于不同的项目，同一个makefile经过很少的修改或完全不用修改就可以使用。 具体来说就是能够自动扫描得到项目所包</description>
+    </item>
+    
+    <item>
+      <title>异常处理</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <description>arm据有7种工作模式: 一上电，cpu处于svc模式（管理模式supervisor） 发生中断，cpu进入IRQ模式，R13、R14切换到相应</description>
+    </item>
+    
+    <item>
+      <title>控制icache</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%8E%A7%E5%88%B6icache/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E6%8E%A7%E5%88%B6icache/</guid>
+      <description>相关概念 基于程序访问的局限性，在主存和CPU 通用寄存器之前设置了一类高速的、容量较小的存储器，把正在执行的指令地址附件的一部分指令或数据从主</description>
+    </item>
+    
+    <item>
+      <title>数据绑定Data Binding</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/wpf/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9Adata-binding/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/wpf/%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9Adata-binding/</guid>
+      <description>WPF的一个特点是数据驱动界面，就是数据是底层、是心脏，数据变了作为表层的UI就会跟着变、将数据展现给用户；如果用户修改了UI元素上的值，相</description>
+    </item>
+    
+    <item>
+      <title>设置系统时钟</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%92%9F/</guid>
+      <description>系统时钟控制逻辑，在S3C6410中生成所需的系统时钟信号，用于CPU的ARMCLK，AXI/AHB总线外设的HCLK和APB总线外设的PC</description>
+    </item>
+    
+    <item>
+      <title>委托的理解</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/csharp/%E5%A7%94%E6%89%98%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/csharp/%E5%A7%94%E6%89%98%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>程序是对现实世界的抽象,就是一个人A委托另一个人B去干个啥事,A只是发出命令,具体的事是由B来完成的. 在程序世界里委托只是存储了各个方法的地</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hugo on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/hugo/</link>
+    <description>Recent content in hugo on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 05 May 2018 22:02:50 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo使用及部署</title>
+      <link>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/hugo%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 05 May 2018 22:02:50 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/hugo%E4%BD%BF%E7%94%A8%E5%8F%8A%E9%83%A8%E7%BD%B2/</guid>
+      <description>参考 Hugo借助Travis CI实现GitHub Pages自动部署实践 hugo官方文档 Hexo遇上Travis-CI：可能是最通俗易懂的自动</description>
+    </item>
+    
+  </channel>
+</rss>

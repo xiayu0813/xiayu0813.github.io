@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>OpenWrt编译 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="参考文档 官方Wiki: OpenWrt Buildroot – Installation 官方Wiki: OpenWrt Buildroot – Usage 官方Wiki: Image Generator (Image Builder) 官方Wiki: Using the SDK 开源中国: 编译HG255D的openwrt固件" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="OpenWrt编译" />
+<meta property="og:description" content="参考文档 官方Wiki: OpenWrt Buildroot – Installation 官方Wiki: OpenWrt Buildroot – Usage 官方Wiki: Image Generator (Image Builder) 官方Wiki: Using the SDK 开源中国: 编译HG255D的openwrt固件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/" />
+<meta property="article:published_time" content="2014-12-17T10:25:30+00:00" />
+<meta property="article:modified_time" content="2014-12-17T10:25:30+00:00" />
+<meta itemprop="name" content="OpenWrt编译">
+<meta itemprop="description" content="参考文档 官方Wiki: OpenWrt Buildroot – Installation 官方Wiki: OpenWrt Buildroot – Usage 官方Wiki: Image Generator (Image Builder) 官方Wiki: Using the SDK 开源中国: 编译HG255D的openwrt固件">
+<meta itemprop="datePublished" content="2014-12-17T10:25:30+00:00" />
+<meta itemprop="dateModified" content="2014-12-17T10:25:30+00:00" />
+<meta itemprop="wordCount" content="1980">
+
+
+
+<meta itemprop="keywords" content="OpenWrt,HG255D," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="OpenWrt编译"/>
+<meta name="twitter:description" content="参考文档 官方Wiki: OpenWrt Buildroot – Installation 官方Wiki: OpenWrt Buildroot – Usage 官方Wiki: Image Generator (Image Builder) 官方Wiki: Using the SDK 开源中国: 编译HG255D的openwrt固件"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">OpenWrt编译</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-12-17 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%8A%98%E8%85%BE/"> 折腾 </a>
+            <a href="/categories/openwrt/"> OpenWrt </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#参考文档">参考文档</a></li>
+    <li><a href="#环境说明">环境说明</a></li>
+    <li><a href="#安装依赖">安装依赖</a></li>
+    <li><a href="#从源码编译固件">从源码编译固件</a>
+      <ul>
+        <li><a href="#下载更新源码">下载更新源码</a></li>
+        <li><a href="#下载更新feeds">下载更新feeds</a></li>
+        <li><a href="#针对hg255d进行修改">针对HG255D进行修改</a></li>
+        <li><a href="#配置软件包并编译">配置软件包并编译</a></li>
+        <li><a href="#生成固件的位置">生成固件的位置</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用image-builder生成固件">使用Image Builder生成固件</a></li>
+    <li><a href="#使用sdk从源码编译软件包">使用SDK从源码编译软件包</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="参考文档">参考文档</h2>
+<ul>
+<li><a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence">官方Wiki: OpenWrt Buildroot – Installation</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/build">官方Wiki: OpenWrt Buildroot – Usage</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/obtain.firmware.generate">官方Wiki: Image Generator (Image Builder)</a></li>
+<li><a href="http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk">官方Wiki: Using the SDK</a></li>
+<li><a href="http://my.oschina.net/osbin/blog/278782">开源中国: 编译HG255D的openwrt固件</a></li>
+<li><a href="http://blog.csdn.net/eldn__/article/details/9707065">CSDN: HG255D[OpenWrt]从入门到精通</a></li>
+<li><a href="http://www.zoublog.com/compile-customized-openwrt/">小邹先森博客: 编译个性化的openwrt固件</a></li>
+<li><a href="http://www.cnblogs.com/shudai/p/3256534.html">搭建OpenWrt开发环境（包括编译过程）</a></li>
+<li><a href="http://www.it165.net/network/html/201303/1004.html">用ImageBuilder定制自己的openwrt路由器</a></li>
+<li><a href="http://see.sl088.com/wiki/Openwrt%E7%BC%96%E8%AF%91_%E6%90%AD%E5%BB%BAOpenwrt_SDK#.E4.BD.BF.E7.94.A8SDK">Openwrt编译 搭建Openwrt SDK</a></li>
+</ul>
+<h2 id="环境说明">环境说明</h2>
+<ul>
+<li>操作系统：Fedora 21 - 64Bit</li>
+<li>路由器： HG255D  CPU：RT3052F 384M FLASH：16M RAM：64M</li>
+<li>OpenWrt: trunk (main development tree) 2014.12.16</li>
+</ul>
+<h2 id="安装依赖">安装依赖</h2>
+<p>按照*<a href="http://wiki.openwrt.org/doc/howto/buildroot.exigence">官方Wiki: OpenWrt Buildroot – Installation</a>*进行安装</p>
+<blockquote>
+<p>yum install -y subversion binutils bzip2 gcc gcc-c++ gawk gettext flex ncurses-devel zlib-devel make patch unzip perl-ExtUtils-MakeMaker glibc glibc-devel glibc-static quilt ncurses-lib sed sdcc intltool sharutils bison wget openssl-devel</p>
+</blockquote>
+<p>ps: 比官方wiki中多了<em>openssl-devel</em>,在fedora 21中<em>make menuconfig</em>时提示</p>
+<blockquote>
+<p>Build dependency: Please install the openssl library (with development headers)</p>
+</blockquote>
+<h2 id="从源码编译固件">从源码编译固件</h2>
+<h3 id="下载更新源码">下载更新源码</h3>
+<blockquote>
+<p>svn co svn://svn.openwrt.org/openwrt/trunk/
+svn update</p>
+</blockquote>
+<h3 id="下载更新feeds">下载更新feeds</h3>
+<p>feeds是OpenWrt所需的软件包，其配置文件为<code>feeds.conf.default</code></p>
+<blockquote>
+<p>./scripts/feeds update -a
+./scripts/feeds install -a</p>
+</blockquote>
+<p>这里的<code>install</code>是让这些软件包在<code>make menuconfig</code>中可用，并没有真正编译安装，其中更新单个软件包可用<code>./scripts/feeds install &lt;PACKAGENAME&gt;</code>实现。</p>
+<h3 id="针对hg255d进行修改">针对HG255D进行修改</h3>
+<ul>
+<li>打开对HG255D的支持</li>
+</ul>
+<p>编辑target/linux/ramips/image/Makefile,搜索<em>HG255D</em>,删除掉所找到的那两行行首的*#*。</p>
+<ul>
+<li>改电源指示灯不能正常工作的问题</li>
+</ul>
+<p>编辑target/linux/ramips/base-files/etc/diag.sh,找到</p>
+<pre><code>hlk-rm04)
+        status_led=&quot;hlk-rm04:red:power&quot;
+        ;;
+</code></pre>
+<p>在下面添加（添加的位置不重要，只要符合语法就行）：</p>
+<pre><code>hg255d)
+        status_led=&quot;hg255d:power&quot;
+        ;;
+</code></pre>
+<h3 id="配置软件包并编译">配置软件包并编译</h3>
+<p>使用如下命令：</p>
+<blockquote>
+<p>make defconfig
+make prereq
+make menuconfig</p>
+</blockquote>
+<p><code>make defconfig</code>是将配置写入<code>.config</code>文件;<code>make prereq</code>是相查看编译环境是否准备好;<code>make menuconfig</code>会打开配置界面。
+使用&rsquo;y、m、n&rsquo;按键选择所需的软件包，按下&rsquo;y&rsquo;标签变为’&lt;*&gt;‘，表明软件包会被编译进固件；按下&rsquo;m&rsquo;标签变为'<!-- raw HTML omitted -->',表明软件包会被编译，但不会编译进固件（可用opkg进行安装）；按下&rsquo;n&rsquo;标签变为‘&lt; &gt;’，表明软件包源码不会被编译。按两个<!-- raw HTML omitted -->进行退出。</p>
+<p>一切准备好之后就可以进行编译了：
+最简单的就是直接输入<code>make</code>进行编译。另外也有其他的一些编译参数可用。</p>
+<ul>
+<li>使用多核处理器：</li>
+</ul>
+<blockquote>
+<p>make -j 3</p>
+</blockquote>
+<p><code>-j</code>后的数字为处理器核心数+1。</p>
+<ul>
+<li>输出详细编译信息:</li>
+</ul>
+<blockquote>
+<p>make V=s</p>
+</blockquote>
+<ul>
+<li>在后台进行编译，使用空闲的I/O资源和CPU性能</li>
+</ul>
+<blockquote>
+<p>ionice -c 3 nice -n 20 make -j 2</p>
+</blockquote>
+<ul>
+<li>单独编译一个软件包(cups软件包)</li>
+</ul>
+<blockquote>
+<p>make package/cups/compile V=99</p>
+</blockquote>
+<p>其他高级方式参考<a href="http://wiki.openwrt.org/doc/howto/build">官方Wiki: OpenWrt Buildroot – Usage</a>和<a href="http://www.cnblogs.com/shudai/p/3256534.html">搭建OpenWrt开发环境（包括编译过程）</a>。</p>
+<h3 id="生成固件的位置">生成固件的位置</h3>
+<p>就在当前目录的bin文件夹下。</p>
+<h2 id="使用image-builder生成固件">使用Image Builder生成固件</h2>
+<ul>
+<li>
+<p>下载对应的Image Builder
+HG255D的地址在<a href="https://downloads.openwrt.org/snapshots/trunk/ramips/OpenWrt-ImageBuilder-ramips_rt305x-for-linux-x86_64.tar.bz2">这里</a></p>
+</li>
+<li>
+<p>解压并进入解压目录，<em>同源码编译一样针对HG255D修改相关文件</em></p>
+</li>
+<li>
+<p>开始编译</p>
+</li>
+</ul>
+<p>编译语法：
+编译XXX的固件，包含软件“pkg1 pkg2 pkg3”，不包含“pkg4 pkg5 pkg6”</p>
+<blockquote>
+<p>make image PROFILE=XXX PACKAGES=&ldquo;pkg1 pkg2 pkg3 -pkg4 -pkg5 -pkg6&rdquo;</p>
+</blockquote>
+<p>对于所需的软件包，可从前的openwrt中获取：</p>
+<blockquote>
+<p>echo $(opkg list_installed | awk &lsquo;{ print $1 }')</p>
+</blockquote>
+<p>还是写成shell脚本方便点：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>make image <span class="nv">PROFILE</span><span class="o">=</span>HG255D <span class="nv">PACKAGES</span><span class="o">=</span><span class="s2">&#34;base-files blkid block-mount busybox cfdisk chat comgt ip ddns-scripts dnsmasq dropbear e2fsprogs ebtables etherwake firewall fstools gre hd-idle hdparm hostapd hostapd-common ip6tables iptables iptables-mod-conntrack-extra iptables-mod-filter iptables-mod-ipopt iptables-mod-ipp2p iw jshn jsonfilter kernel kmod-cfg80211 kmod-crypto-aes kmod-crypto-arc4 kmod-crypto-core kmod-crypto-crc32c kmod-crypto-hash kmod-dnsresolver kmod-ebtables kmod-eeprom-93cx6 kmod-fs-autofs4 kmod-fs-exportfs kmod-fs-ext4 kmod-fs-nfs kmod-fs-nfs-common kmod-fs-reiserfs kmod-fs-vfat kmod-fs-xfs kmod-fuse kmod-gpio-button-hotplug kmod-gpio-dev kmod-gre kmod-hid kmod-hid-generic kmod-ifb kmod-input-core kmod-input-evdev kmod-ip6tables kmod-ipt-compat-xtables kmod-ipt-conntrack kmod-ipt-conntrack-extra kmod-ipt-core kmod-ipt-filter kmod-ipt-ipopt kmod-ipt-ipp2p kmod-ipt-nat kmod-iptunnel kmod-iptunnel4 kmod-ipv6 kmod-leds-gpio kmod-ledtrig-gpio kmod-ledtrig-netdev kmod-ledtrig-timer kmod-ledtrig-usbdev kmod-lib-crc-ccitt kmod-lib-crc-itu-t kmod-lib-crc16 kmod-lib-crc32c kmod-lib-textsearch kmod-mac80211 kmod-macvlan kmod-nls-base kmod-nls-cp437 kmod-nls-iso8859-1 kmod-nls-utf8 kmod-p54-common kmod-p54-usb kmod-ppp kmod-pppoe kmod-pppox kmod-rt2800-lib kmod-rt2800-usb kmod-rt2x00-lib kmod-rt2x00-usb kmod-rt73-usb kmod-rtl8187 kmod-sched-connmark kmod-sched-core kmod-scsi-core kmod-sit kmod-slhc kmod-sound-core kmod-tun kmod-usb-audio kmod-usb-cm109 kmod-usb-core kmod-usb-dwc2 kmod-usb-hid kmod-usb-printer kmod-usb-storage l7-protocols libblkid libblobmsg-json libc libdaemon libext2fs libgcc libgd libip4tc libip6tc libiwinfo libiwinfo-lua libjpeg libjson-c libjson-script liblua libncurses libnfnetlink libnl-tiny libpng libpthread librt libubox libubus libubus-lua libuci libuci-lua libuuid libxtables lua luci luci-app-ddns luci-app-firewall luci-app-hd-idle luci-app-ntpc luci-app-qos luci-app-radvd luci-app-samba luci-app-upnp luci-app-vnstat luci-app-wol luci-base luci-i18n-chinese luci-i18n-english luci-lib-nixio luci-mod-admin-full luci-proto-3g luci-proto-ipv6 luci-proto-ppp luci-theme-bootstrap maccalc miniupnpd mtd netifd ntpclient odhcp6c odhcpd opkg ppp ppp-mod-pppoe procd qos-scripts samba36-server swap-utils swconfig tc terminfo ubox ubus ubusd uci uhttpd uhttpd-mod-ubus vnstat vnstati vsftpd wireless-tools wpad xfs-fsck xfs-growfs xfs-mkfs zlib&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="使用sdk从源码编译软件包">使用SDK从源码编译软件包</h2>
+<ul>
+<li>
+<p>下载对应的SDK包
+HG255D的下载地址在<a href="https://downloads.openwrt.org/snapshots/trunk/ramips/OpenWrt-SDK-ramips-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2">这里</a></p>
+</li>
+<li>
+<p>编译</p>
+</li>
+</ul>
+<p>官方的例子：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">$ svn <span class="nb">export</span> svn://svn.openwrt.org/openwrt/packages/utils/nano package/nano
+A    package/nano
+A    package/nano/Makefile
+Exported revision 20365.
+$ grep DEPENDS package/nano/Makefile 
+  DEPENDS:<span class="o">=</span>+libncurses
+$ svn <span class="nb">export</span> svn://svn.openwrt.org/openwrt/trunk/package/libs/ncurses package/ncurses
+A    package/ncurses
+A    package/ncurses/patches
+A    package/ncurses/patches/100-ncurses-5.6-20080112-urxvt.patch
+A    package/ncurses/patches/900-terminfo.patch
+A    package/ncurses/patches/101-ncurses-5.6-20080628-kbs.patch
+A    package/ncurses/patches/500-cross.patch
+A    package/ncurses/Makefile
+Exported revision 20365.
+$ make package/ncurses/compile
+Collecting package info: <span class="k">done</span>
+ make<span class="o">[</span>1<span class="o">]</span> package/ncurses/compile
+ make<span class="o">[</span>2<span class="o">]</span> -C package/ncurses compile
+$ make package/nano/compile
+ make<span class="o">[</span>1<span class="o">]</span> package/nano/compile
+ make<span class="o">[</span>2<span class="o">]</span> -C package/ncurses compile
+ make<span class="o">[</span>2<span class="o">]</span> -C package/nano compile
+$ make package/index
+ make<span class="o">[</span>1<span class="o">]</span> package/index
+$ ls bin/packages/mipsel/
+libncurses_5.7-2_mipsel.ipk  nano_2.2.3-1_mipsel.ipk  Packages  Packages.gz
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>编译自已需要的软件</li>
+</ul>
+<p>现在要编译一个ipv6用的6relayd软件，我在<a href="https://dev.openwrt.org.cn/browser#trunk/package/6relayd">这里</a>找到了。
+下载到SDK中：</p>
+<blockquote>
+<p>svn export svn://svn.openwrt.org.cn/openwrt/trunk/package/6relayd package/6relayd</p>
+</blockquote>
+<p>ps：浏览器的链接是 “https://dev.openwrt.org.cn/browser#trunk/package/6relayd”， 而svn的链接是“svn://svn.openwrt.org.cn/openwrt/trunk/package/6relayd”， 后面是一样的，只需把浏览器链接*#*前换成“svn://svn.openwrt.org.cn/openwrt/”就行了。</p>
+<p>编译：</p>
+<blockquote>
+<p>make package/6relayd/compile</p>
+</blockquote>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-12-17
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/openwrt/">OpenWrt</a>
+          <a href="/tags/hg255d/">HG255D</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/wiki/fedora21%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">fedora21配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/">
+            <span class="next-text nav-default">linaro ubuntu编译opencv</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

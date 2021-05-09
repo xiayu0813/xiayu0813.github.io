@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ROS Package - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-package/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="ROS Package" />
+<meta property="og:description" content="参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-package/" />
+<meta property="article:published_time" content="2015-03-21T18:44:08+00:00" />
+<meta property="article:modified_time" content="2015-03-21T18:44:08+00:00" />
+<meta itemprop="name" content="ROS Package">
+<meta itemprop="description" content="参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统">
+<meta itemprop="datePublished" content="2015-03-21T18:44:08+00:00" />
+<meta itemprop="dateModified" content="2015-03-21T18:44:08+00:00" />
+<meta itemprop="wordCount" content="503">
+
+
+
+<meta itemprop="keywords" content="ROS," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ROS Package"/>
+<meta name="twitter:description" content="参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ROS Package</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2015-03-21 </span>
+        <div class="post-category">
+            <a href="/categories/ros/"> ROS </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="参考">参考</h1>
+<ul>
+<li><a href="http://wiki.ros.org/">官方wiki</a></li>
+<li><a href="http://blog.sina.com.cn/s/articlelist_1712413141_7_1.html">永顿007的博客</a></li>
+<li><a href="http://blog.csdn.net/hcx25909/article/category/1191901">古月居</a></li>
+<li>《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著</li>
+<li>《ROS By Example》 R.Patrick Goebel</li>
+</ul>
+<h1 id="环境说明">环境说明</h1>
+<ul>
+<li>操作系统： Ubuntu 14.04.2</li>
+<li>ROS： ROS Indigo</li>
+</ul>
+<h1 id="ros文件系统工具">ROS文件系统工具</h1>
+<p>ROS系统工具基本上以ros开头，后接命令作用，同时支持TAB补全。</p>
+<ul>
+<li>rospack:  获取package信息
+比如：获取package路径
+rospack find [package_name]</li>
+<li>roscd: 相当于linux的cd命令，用于切换目录
+比如： 切换到存储log的目录
+roscd log</li>
+<li>rosls: 相录于linux的ls命令</li>
+</ul>
+<h1 id="catkin-package介绍">catkin Package介绍</h1>
+<p>catkin Package有三点要求：</p>
+<ol>
+<li>必须包含package.xml文件，该文件提供了package元数据</li>
+<li>必须包含CMakeLists.txt文件</li>
+<li>一个文件夹只能包含一个package</li>
+</ol>
+<p>一个包含packages的catkin workspace的目录如下：</p>
+<pre><code>workspace_folder/        -- WORKSPACE
+  src/                   -- SOURCE SPACE
+    CMakeLists.txt       -- 'Toplevel' CMake file, provided by catkin
+    package_1/
+      CMakeLists.txt     -- CMakeLists.txt file for package_1
+      package.xml        -- Package manifest for package_1
+    ...
+    package_n/
+      CMakeLists.txt     -- CMakeLists.txt file for package_n
+      package.xml        -- Package manifest for package_n
+</code></pre>
+<h1 id="创建catkin-package">创建catkin Package</h1>
+<p>创建命令为：</p>
+<pre><code>catkin_create_pkg &lt;package_name&gt; [depend1] [depend2] [depend3]
+</code></pre>
+<p>在catkin工作区中进行,创建beginner_tutorials，其依赖为std_msgs, roscpp, rospy</p>
+<pre><code>cd ~/catkin_ws/src
+catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+</code></pre>
+<h1 id="编译packages">编译Packages</h1>
+<p><code>catkin_make</code>命令会自动识别该工件区内的packages,并进行编绎。</p>
+<pre><code>catkin_make
+catkin_make install
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2015-03-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/ros/">ROS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/ros/ros-nodes-topics-services-and-parameters/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ROS Nodes,Topics,Services and Parameters</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/ros/ros%E5%AE%89%E8%A3%85/">
+            <span class="next-text nav-default">ROS安装</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

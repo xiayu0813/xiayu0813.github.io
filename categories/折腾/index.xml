@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>折腾 on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/%E6%8A%98%E8%85%BE/</link>
+    <description>Recent content in 折腾 on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 06 May 2018 20:52:11 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>两个电脑共享鼠标键盘</title>
+      <link>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/%E4%B8%A4%E4%B8%AA%E7%94%B5%E8%84%91%E5%85%B1%E4%BA%AB%E9%BC%A0%E6%A0%87%E9%94%AE%E7%9B%98/</link>
+      <pubDate>Sun, 06 May 2018 20:52:11 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/%E4%B8%A4%E4%B8%AA%E7%94%B5%E8%84%91%E5%85%B1%E4%BA%AB%E9%BC%A0%E6%A0%87%E9%94%AE%E7%9B%98/</guid>
+      <description>安装 有两个笔记本，一个运行win10，一个运行monjaro linux，来回切换很麻烦，网上搜索了下共享鼠标键盘的方法，发现支持linux系</description>
+    </item>
+    
+    <item>
+      <title>OpenWrt编译</title>
+      <link>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Wed, 17 Dec 2014 10:25:30 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/</guid>
+      <description>参考文档 官方Wiki: OpenWrt Buildroot – Installation 官方Wiki: OpenWrt Buildroot – Usage 官方Wiki: Image Generator (Image Builder) 官方Wiki: Using the SDK 开源中国: 编译HG255D的openwrt固件</description>
+    </item>
+    
+  </channel>
+</rss>

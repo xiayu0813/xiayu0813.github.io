@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wiki on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/wiki/</link>
+    <description>Recent content in wiki on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 17 Jun 2020 08:35:15 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/wiki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>清理虚拟机空间</title>
+      <link>http://www.aaronxia.com/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/</guid>
+      <description>清理虚拟机的空间 vmware下的虚拟机长时间使用后会变大，可以清理不用的空间，减少磁盘占用，便于复制。 当前使用的虚拟机为manjaro lin</description>
+    </item>
+    
+    <item>
+      <title>QT延时</title>
+      <link>http://www.aaronxia.com/post/wiki/qt%E5%BB%B6%E6%97%B6/</link>
+      <pubDate>Thu, 02 Apr 2015 15:39:07 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/qt%E5%BB%B6%E6%97%B6/</guid>
+      <description>参考 Linux公社：如何让Qt程序Sleep Norckon&amp;rsquo;s blog:QT延时器函数 The Sleep Function zjcxl的博客:QT延时方法 使用QTime 1 2 3 4 QTime time; time.start(); while(time.elapsed()&amp;lt;1000) // 1</description>
+    </item>
+    
+    <item>
+      <title>fedora21配置</title>
+      <link>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 27 Dec 2014 09:58:14 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu</description>
+    </item>
+    
+    <item>
+      <title>C语言基础</title>
+      <link>http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 18 Sep 2014 19:25:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</guid>
+      <description>参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1</description>
+    </item>
+    
+    <item>
+      <title>git常用命令</title>
+      <link>http://www.aaronxia.com/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 28 Aug 2014 15:35:04 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 - git clone &amp;lt;url&amp;gt; 克隆远程版本库 - git init 初始化本地版本库 - git add . 跟踪所有改动过的文件 - git commit -m &amp;#34;commit message&amp;#34; 提交所有更新过的</description>
+    </item>
+    
+  </channel>
+</rss>

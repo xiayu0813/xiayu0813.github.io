@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/</link>
+    <description>Recent content in Categories on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 22:59:17 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>http://www.aaronxia.com/categories/linux/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>学习</title>
+      <link>http://www.aaronxia.com/categories/%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/%E5%AD%A6%E4%B9%A0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware</title>
+      <link>http://www.aaronxia.com/categories/vmware/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wiki</title>
+      <link>http://www.aaronxia.com/categories/wiki/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/wiki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>折腾</title>
+      <link>http://www.aaronxia.com/categories/%E6%8A%98%E8%85%BE/</link>
+      <pubDate>Sun, 06 May 2018 20:52:11 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/%E6%8A%98%E8%85%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>博客搭建</title>
+      <link>http://www.aaronxia.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Sat, 05 May 2018 22:02:50 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QT</title>
+      <link>http://www.aaronxia.com/categories/qt/</link>
+      <pubDate>Thu, 02 Apr 2015 15:39:07 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/qt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ROS</title>
+      <link>http://www.aaronxia.com/categories/ros/</link>
+      <pubDate>Sun, 22 Mar 2015 10:18:26 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/ros/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenWrt</title>
+      <link>http://www.aaronxia.com/categories/openwrt/</link>
+      <pubDate>Wed, 17 Dec 2014 10:25:30 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/openwrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>http://www.aaronxia.com/categories/c/</link>
+      <pubDate>Thu, 18 Sep 2014 19:25:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FreeRTOS移植</title>
+      <link>http://www.aaronxia.com/categories/freertos%E7%A7%BB%E6%A4%8D/</link>
+      <pubDate>Sun, 14 Sep 2014 09:20:22 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/freertos%E7%A7%BB%E6%A4%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>STM32F103</title>
+      <link>http://www.aaronxia.com/categories/stm32f103/</link>
+      <pubDate>Sun, 14 Sep 2014 09:20:22 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/stm32f103/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>系统基础</title>
+      <link>http://www.aaronxia.com/categories/%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 31 Aug 2014 09:47:43 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://www.aaronxia.com/categories/git/</link>
+      <pubDate>Thu, 28 Aug 2014 15:35:04 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>http://www.aaronxia.com/categories/c&#43;&#43;/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/c&#43;&#43;/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MFC</title>
+      <link>http://www.aaronxia.com/categories/mfc/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/mfc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WPF</title>
+      <link>http://www.aaronxia.com/categories/wpf/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/wpf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>嵌入式</title>
+      <link>http://www.aaronxia.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>裸机程序</title>
+      <link>http://www.aaronxia.com/categories/%E8%A3%B8%E6%9C%BA%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/%E8%A3%B8%E6%9C%BA%E7%A8%8B%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>http://www.aaronxia.com/categories/c#/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/categories/c#/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

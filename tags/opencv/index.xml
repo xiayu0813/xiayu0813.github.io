@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>opencv on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/opencv/</link>
+    <description>Recent content in opencv on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Dec 2014 15:24:54 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/opencv/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linaro ubuntu编译opencv</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/</link>
+      <pubDate>Wed, 03 Dec 2014 15:24:54 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/</guid>
+      <description>主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程</description>
+    </item>
+    
+  </channel>
+</rss>

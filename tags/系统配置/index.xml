@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统配置 on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in 系统配置 on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 27 Dec 2014 09:58:14 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fedora21配置</title>
+      <link>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 27 Dec 2014 09:58:14 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu</description>
+    </item>
+    
+  </channel>
+</rss>

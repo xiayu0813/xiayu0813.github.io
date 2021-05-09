@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>manjaro on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/manjaro/</link>
+    <description>Recent content in manjaro on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 22:59:17 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/manjaro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>manjaro配置</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]</description>
+    </item>
+    
+  </channel>
+</rss>

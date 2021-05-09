@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/ros/</link>
+    <description>Recent content in ROS on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Mar 2015 10:18:26 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/ros/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS Nodes,Topics,Services and Parameters</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-nodes-topics-services-and-parameters/</link>
+      <pubDate>Sun, 22 Mar 2015 10:18:26 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-nodes-topics-services-and-parameters/</guid>
+      <description>参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统</description>
+    </item>
+    
+    <item>
+      <title>ROS Package</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-package/</link>
+      <pubDate>Sat, 21 Mar 2015 18:44:08 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros-package/</guid>
+      <description>参考 官方wiki 永顿007的博客 古月居 《开源机器人操件系统——ROS》 张建伟 张立伟 胡颖 张俊 编著 《ROS By Example》 R.Patrick Goebel 环境说明 操作系统</description>
+    </item>
+    
+    <item>
+      <title>ROS安装</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sat, 21 Mar 2015 16:59:18 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/ros/ros%E5%AE%89%E8%A3%85/</guid>
+      <description>参考 官方wiki 环境说明 操作系统： Ubuntu 14.04.2 ROS： ROS Indigo 安装 直接安照ros wiki来做。 配置软件源（默认的已经允许，不用再配置） 添加ros软件源并</description>
+    </item>
+    
+  </channel>
+</rss>

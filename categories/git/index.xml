@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/git/</link>
+    <description>Recent content in git on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 28 Aug 2014 15:35:04 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git常用命令</title>
+      <link>http://www.aaronxia.com/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Thu, 28 Aug 2014 15:35:04 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 - git clone &amp;lt;url&amp;gt; 克隆远程版本库 - git init 初始化本地版本库 - git add . 跟踪所有改动过的文件 - git commit -m &amp;#34;commit message&amp;#34; 提交所有更新过的</description>
+    </item>
+    
+  </channel>
+</rss>

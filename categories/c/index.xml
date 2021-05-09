@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/c/</link>
+    <description>Recent content in C on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Sep 2014 19:25:00 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C语言基础</title>
+      <link>http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 18 Sep 2014 19:25:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/</guid>
+      <description>参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1</description>
+    </item>
+    
+  </channel>
+</rss>

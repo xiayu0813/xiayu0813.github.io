@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>系统基础 on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</link>
+    <description>Recent content in 系统基础 on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 31 Aug 2014 09:47:43 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreeRTOS移植-系统基础</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 31 Aug 2014 09:47:43 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</guid>
+      <description>编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表</description>
+    </item>
+    
+  </channel>
+</rss>

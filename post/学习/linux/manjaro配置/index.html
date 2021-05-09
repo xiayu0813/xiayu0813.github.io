@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>manjaro配置 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="manjaro配置" />
+<meta property="og:description" content="安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/" />
+<meta property="article:published_time" content="2020-11-22T22:59:17+08:00" />
+<meta property="article:modified_time" content="2020-11-22T22:59:17+08:00" />
+<meta itemprop="name" content="manjaro配置">
+<meta itemprop="description" content="安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]">
+<meta itemprop="datePublished" content="2020-11-22T22:59:17+08:00" />
+<meta itemprop="dateModified" content="2020-11-22T22:59:17+08:00" />
+<meta itemprop="wordCount" content="1447">
+
+
+
+<meta itemprop="keywords" content="manjaro,linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="manjaro配置"/>
+<meta name="twitter:description" content="安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">manjaro配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-11-22 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <ul>
+<li>安装vim</li>
+</ul>
+<p><code>pacman -S vim</code></p>
+<ul>
+<li>安装AUR源管理工具</li>
+</ul>
+<p><code>sudo pacman -S yay</code></p>
+<ul>
+<li>配置archlinuxcn aur源</li>
+</ul>
+<p>编辑<code>/etc/pacman.conf</code>，在最后添加</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"> [archlinuxcn]
+# The Chinese Arch Linux communities packages.
+# SigLevel = Optional TrustedOnly
+SigLevel = Optional TrustAll
+# 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</code></pre></td></tr></table>
+</div>
+</div><p>安装keyring: <code>sudo pacman -S archlinuxcn-keyring</code></p>
+<ul>
+<li>
+<p>更新源排名（不知道作用）
+<code>sudo pacman-mirrors -i -c China -m rank</code>
+<code>sudo pacman-mirrors -g</code></p>
+</li>
+<li>
+<p>更新系统</p>
+</li>
+</ul>
+<p><code>sudo pacman -Syyu</code></p>
+<ul>
+<li>安装git</li>
+</ul>
+<p><code>sudo pacman _-S git</code></p>
+<ul>
+<li>安装vscode</li>
+</ul>
+<p><code>yay -S visual-studio-code-bin</code></p>
+<ul>
+<li>
+<p>设置代理</p>
+<ul>
+<li>
+<p>安装qv2ray</p>
+<p><code>yay -S qv2ray</code></p>
+</li>
+<li>
+<p>安装v2ray</p>
+<p><code>yay -S v2ray</code></p>
+</li>
+<li>
+<p>具体配置见<a href="https://qv2ray.net/getting-started/">qv2ray start</a></p>
+</li>
+<li>
+<p>设置shell代理</p>
+<p>export HTTP_PROXY=&ldquo;http://127.0.0.1:8889&rdquo;
+export HTTPS_PROXY=&ldquo;http://127.0.0.1:8889&rdquo;</p>
+<p>这种配置目前对git有效，其他未测试</p>
+</li>
+</ul>
+</li>
+<li>
+<p>安装oh-my-zsh</p>
+<ul>
+<li>
+<p>安装zsh</p>
+<p><code>sudo pacman -S zsh</code></p>
+</li>
+<li>
+<p>设置默认shell为zsh</p>
+<p><code>chsh -s /bin/zsh</code></p>
+</li>
+<li>
+<p>安装oh-my-zsh</p>
+<p><code>sh -c &quot;$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</code></p>
+<p>安装时会用到git，因此需先安装git并设置代理。</p>
+<p>使用该脚本自动安装时不需要上一步设置默认shell的操作，脚本会询问该设置。</p>
+<p>另一种安装方式是使用AUR库<code>yay -S oh-my-zsh-git</code>，优点是可以随系统自动更新，缺点是安装目录为<em>user/share</em>，安装主题及相关插件不方便。最终选择使用脚本的安装方式。</p>
+</li>
+<li>
+<p>安装zsh-autosuggesiton插件
+<code>git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions</code></p>
+</li>
+<li>
+<p>安装zsh-syntax-highlighting插件
+<code>git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting</code></p>
+</li>
+<li>
+<p>安装主题powerlevel10k
+<code>git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k</code></p>
+</li>
+<li>
+<p>安装zsh代理插件zhs-proxy
+<code>git clone https://github.com/sukkaw/zsh-proxy.git ~/.oh-my-zsh/custom/plugins/zsh-proxy</code>
+安装完成后配置插件，运行<code>init_proxy</code>初始化，运行<code>config_proxy</code>配置代理IP，运行<code>proxy</code>启动代理，运行<code>noproxy</code>关闭代理</p>
+</li>
+<li>
+<p>安装autojump
+<code>yay -S autojump</code></p>
+</li>
+<li>
+<p>安装zsh-completions
+<code>  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions</code></p>
+</li>
+<li>
+<p>安装字体yay -S nerd-fonts-complete
+<code>yay -S nerd-fonts-complete</code></p>
+</li>
+<li>
+<p>配置*.zshrc*，主要配置主题和插件
+ZSH_THEME=&ldquo;powerlevel10k/powerlevel10k&rdquo;
+plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-proxy)</p>
+</li>
+</ul>
+<p>重新加载配置<code>autoload -U compinit &amp;&amp; compinit</code></p>
+</li>
+<li>
+<p>安装fcitx5，rime输入法</p>
+<ul>
+<li>
+<p>安装的是archlinuxcn源中的fcitx5
+<code>yay -S fcitx5-git fcitx5-configtool-git fcitx5-rime-git fcitx5-chinese-addons-git fcitx5-qt4-git fcitx5-gtk-git fcitx5-qt5-git</code></p>
+</li>
+<li>
+<p>查看桌面系统是X11还是wayland，
+<code>echo ${XDG_SESSION_TYPE}</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>针对X11桌面系统，编辑~/.xprofile
+export GTK_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+export QT_IM_MODULE=fcitx5
+fcitx5 &amp;</p>
+<p>针对wayland编辑~/.pam_environment
+INPUT_METHOD  DEFAULT=fcitx5
+GTK_IM_MODULE DEFAULT=fcitx5
+QT_IM_MODULE  DEFAULT=fcitx5
+XMODIFIERS DEFAULT=@im=fcitx5</p>
+<ul>
+<li>安装皮肤
+<code>sudo pacman -S fcitx5-material-color</code></li>
+</ul>
+<p>然后修改配置文件 ~/.config/fcitx5/conf/classicui.conf：</p>
+<pre><code># 垂直候选列表
+Vertical Candidate List=False
+
+# 按屏幕 DPI 使用
+PerScreenDPI=True
+
+# Font (设置成你喜欢的字体)
+Font=&quot;思源黑体 CN Medium 13&quot;
+
+# 主题
+Theme=Material-Color-Pink
+</code></pre>
+<ul>
+<li>修改为单行模式</li>
+</ul>
+<p>新建/修改 ~/.config/fcitx5/conf/rime.conf</p>
+<pre><code># 可用时在应用程序中显示预编辑文本
+PreeditInApplication=True
+</code></pre>
+<ul>
+<li>
+<p>安装中文字体
+<code>sudo pacman -S ttf-roboto noto-fonts ttf-dejavu</code>
+<code>sudo pacman -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei</code>
+<code>sudo pacman -S noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts</code></p>
+</li>
+<li>
+<p>挂载vmware的共享目录</p>
+<p>安装好manjaro linux后，在mnt下不会出现共享目录hgfs。需要用vmhgfs-fuse命令手动挂载，为了便于操作，将该命令作为系统服务。新建文件vm-fuse-hgfs.service，内容如下，添加到<code>/etc/systemd/system</code>目录下。</p>
+<pre><code>[Unit]
+Description=Load VMware shared folders
+Requires=vmware-vmblock-fuse.service
+After=vmware-vmblock-fuse.service
+ConditionVirtualization=vmware
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=
+ExecStart=/usr/bin/vmhgfs-fuse -o allow_other -o auto_unmount /mnt/hgfs
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>然后使用命令<code>systemctl enable vm-fuse-hgfs.service</code>设置开机启动，
+用<code>systemctl start vm-fuse-hgfs.service</code>启动服务，用<code>systemctl status vm-fuse-hgfs.service</code>查看状态。用命令<code>vmware-hgfsclient</code>可查看共享的目录。</p>
+</li>
+<li>
+<p>解决win10与虚拟机无法复制粘贴文件问题
+可以复制粘贴文本和单个文件，文件夹及压缩包不行，需启动服务vmware-vmblock-fuse
+<code>systemctl enable vmware-vmblock-fuse</code></p>
+<p>目前还存在粘贴时报“格式错误的URL..”，不影响使用。</p>
+</li>
+</ul>
+<p>Q: 使用yay -S 时报错：Cannot find the strip binary required for object file stripping</p>
+<p>A: 缺少基础工具，安装之<code>sudo pacman -Sy base-devel</code></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-11-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/manjaro/">manjaro</a>
+          <a href="/tags/linux/">linux</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/">
+            <span class="next-text nav-default">清理虚拟机空间</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

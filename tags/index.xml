@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/</link>
+    <description>Recent content in Tags on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 22:59:17 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>http://www.aaronxia.com/tags/linux/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>manjaro</title>
+      <link>http://www.aaronxia.com/tags/manjaro/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/manjaro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vmware</title>
+      <link>http://www.aaronxia.com/tags/vmware/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wiki</title>
+      <link>http://www.aaronxia.com/tags/wiki/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/wiki/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Synergy</title>
+      <link>http://www.aaronxia.com/tags/synergy/</link>
+      <pubDate>Sun, 06 May 2018 20:52:11 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/synergy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>http://www.aaronxia.com/tags/hugo/</link>
+      <pubDate>Sat, 05 May 2018 22:02:50 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Travis CI</title>
+      <link>http://www.aaronxia.com/tags/travis-ci/</link>
+      <pubDate>Sat, 05 May 2018 22:02:50 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/travis-ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>QT</title>
+      <link>http://www.aaronxia.com/tags/qt/</link>
+      <pubDate>Thu, 02 Apr 2015 15:39:07 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/qt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ROS</title>
+      <link>http://www.aaronxia.com/tags/ros/</link>
+      <pubDate>Sun, 22 Mar 2015 10:18:26 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/ros/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>fedora21</title>
+      <link>http://www.aaronxia.com/tags/fedora21/</link>
+      <pubDate>Sat, 27 Dec 2014 09:58:14 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/fedora21/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>系统配置</title>
+      <link>http://www.aaronxia.com/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 27 Dec 2014 09:58:14 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HG255D</title>
+      <link>http://www.aaronxia.com/tags/hg255d/</link>
+      <pubDate>Wed, 17 Dec 2014 10:25:30 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/hg255d/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OpenWrt</title>
+      <link>http://www.aaronxia.com/tags/openwrt/</link>
+      <pubDate>Wed, 17 Dec 2014 10:25:30 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/openwrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linaro</title>
+      <link>http://www.aaronxia.com/tags/linaro/</link>
+      <pubDate>Wed, 03 Dec 2014 15:24:54 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/linaro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opencv</title>
+      <link>http://www.aaronxia.com/tags/opencv/</link>
+      <pubDate>Wed, 03 Dec 2014 15:24:54 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/opencv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C语言</title>
+      <link>http://www.aaronxia.com/tags/c%E8%AF%AD%E8%A8%80/</link>
+      <pubDate>Thu, 18 Sep 2014 19:25:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/c%E8%AF%AD%E8%A8%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>FreeRTOS</title>
+      <link>http://www.aaronxia.com/tags/freertos/</link>
+      <pubDate>Sun, 14 Sep 2014 09:20:22 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/freertos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>http://www.aaronxia.com/tags/git/</link>
+      <pubDate>Thu, 28 Aug 2014 15:35:04 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>freemind 主题</title>
+      <link>http://www.aaronxia.com/tags/freemind-%E4%B8%BB%E9%A2%98/</link>
+      <pubDate>Sat, 16 Aug 2014 16:43:05 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/freemind-%E4%B8%BB%E9%A2%98/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arm 异常</title>
+      <link>http://www.aaronxia.com/tags/arm-%E5%BC%82%E5%B8%B8/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/arm-%E5%BC%82%E5%B8%B8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>makefile</title>
+      <link>http://www.aaronxia.com/tags/makefile/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/makefile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MFC</title>
+      <link>http://www.aaronxia.com/tags/mfc/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/mfc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tiny6410</title>
+      <link>http://www.aaronxia.com/tags/tiny6410/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/tiny6410/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WPF 数据绑定</title>
+      <link>http://www.aaronxia.com/tags/wpf-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/wpf-%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>http://www.aaronxia.com/tags/c#/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/c#/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>委托</title>
+      <link>http://www.aaronxia.com/tags/%E5%A7%94%E6%89%98/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/tags/%E5%A7%94%E6%89%98/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

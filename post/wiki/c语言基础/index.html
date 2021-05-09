@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>C语言基础 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="C语言基础" />
+<meta property="og:description" content="参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" />
+<meta property="article:published_time" content="2014-09-18T19:25:00+00:00" />
+<meta property="article:modified_time" content="2014-09-18T19:25:00+00:00" />
+<meta itemprop="name" content="C语言基础">
+<meta itemprop="description" content="参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1">
+<meta itemprop="datePublished" content="2014-09-18T19:25:00+00:00" />
+<meta itemprop="dateModified" content="2014-09-18T19:25:00+00:00" />
+<meta itemprop="wordCount" content="1222">
+
+
+
+<meta itemprop="keywords" content="C语言," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C语言基础"/>
+<meta name="twitter:description" content="参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。 补码 首先是计算机对数据的表示，在计算机的世界里只有0/1"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">C语言基础</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-09-18 </span>
+        <div class="post-category">
+            <a href="/categories/wiki/"> wiki </a>
+            <a href="/categories/c/"> C </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#补码">补码</a></li>
+    <li><a href="#数据类型转换">数据类型转换</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>参加了联咏电子的笔试发现C语言的基础是多么差，痛心疾首后还是安下心来学习，以此为鉴。</p>
+<h2 id="补码">补码</h2>
+<p>首先是计算机对数据的表示，在计算机的世界里只有0/1之分，没有数值的正负之分。但我们现实世界的数值是有正负的，为了解决这一矛盾，我们约定使用最高位来表示正负，剩余位表示数值的大小。0表示正数，1表示负数。
+为什么要这样约定呢？为什么不用0表示负数，1表示正数？
+在此有一个“模”的概念，详见<a href="http://baike.baidu.com/view/377340.htm?fr=aladdin">百度百科-补码</a>。其中的一个例子是</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">假设当前时针指向10点，而准确时间是6点，调整时间可有以下两种拨法：一种是倒拨4小时，即：10-4=6；另一种是顺拨8小时：10+8=12+6=6
+在以12模的系统中，加8和减4效果是一样的，因此凡是减4运算，都可以用加8来代替。对“模”而言，8和4互为补数。实际上以12模的系统中，11和1，10和2，9和3，7和5，6和6都有这个特性。共同的特点是两者相加等于模。
+</code></pre></td></tr></table>
+</div>
+</div><p>在计算机的世界中，（在此以8位为例）只能表示0000 0000 ~ 1111 1111共256个数。因此“模”为256。正数很好表示，就为0、1、2&hellip;，那负数就是-1（0-1），-2（0-2），-3（0-3）&hellip;，如上的12模所示，-1就可以用0-1 = 0+（256-1）表示，即为255，用二进制表示就是1111 11111。现在我们要抛弃255这个数，就是说计算机只存在1111 1111，并不知道这是个啥意思。这是我们用0-1计算出来的，因此我们把这个数叫-1，即这是-1在计算机世界的表示，学名叫补码。</p>
+<p>我们可以认为只有负数才有补码，正数就是原来的数，不用转换。
+补码的计算方法就是所能表示的数值个数（即为“模”）减去负数的大小。用二进制的直接做法是符号不变，数值按位取反，然后整个数加1。
+至于什么补码的表示范围是-128~127？我们用0000 0000至1111 1111组成一个圆圈，从0000 0000开始顺时针加1，逆时针减1，这样就表示了8bit能表示的数值范围。正负数的表示的交接处是1000 0000和01111 1111。为了统一起始位的正负，所以1000 0000表示-128。这样负数是128个数，正数（算上零）也是128个数，多么和谐！</p>
+<h2 id="数据类型转换">数据类型转换</h2>
+<ol>
+<li>相同大小的signed和unsigned
+两者所存储的二进制是一样的，就看各自的解释了。比如char -128,转换成unsigned char就是128，因为两者的二进制都是1000 0000。</li>
+<li>signed之间的从小转大
+用符号位扩展至对应大小，这样保证了结果不变。比如char -4,转换成int还是-4，但是从0xfc转换为了0xffff fffc。</li>
+<li>unsigned之间的从小转大
+高位补0。实际上同signed之间是一样的，要保证结果不变。</li>
+<li>signed之间的从大转小
+直接进行二进制截取。就是大数先用二进制表示出来，再截取所用的位数。比如int -500转换为char变成12。从0xffff fe0c转换成0x0c。</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-09-18
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/c%E8%AF%AD%E8%A8%80/">C语言</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">linaro ubuntu编译opencv</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-stm32f103/">
+            <span class="next-text nav-default">FreeRTOS移植-STM32F103</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

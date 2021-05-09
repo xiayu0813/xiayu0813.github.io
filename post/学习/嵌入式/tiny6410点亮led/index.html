@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>tiny6410点亮LED - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="裸机程序分为启动代码和C函数 启动代码完成硬件初始化并调用C函数 6410的硬件初始化分为设置CPU（告诉CPU外设的地址范围）和关看门狗（3秒" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/tiny6410%E7%82%B9%E4%BA%AEled/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="tiny6410点亮LED" />
+<meta property="og:description" content="裸机程序分为启动代码和C函数 启动代码完成硬件初始化并调用C函数 6410的硬件初始化分为设置CPU（告诉CPU外设的地址范围）和关看门狗（3秒" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/tiny6410%E7%82%B9%E4%BA%AEled/" />
+<meta property="article:published_time" content="2014-07-26T22:03:48+00:00" />
+<meta property="article:modified_time" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="name" content="tiny6410点亮LED">
+<meta itemprop="description" content="裸机程序分为启动代码和C函数 启动代码完成硬件初始化并调用C函数 6410的硬件初始化分为设置CPU（告诉CPU外设的地址范围）和关看门狗（3秒">
+<meta itemprop="datePublished" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="dateModified" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="wordCount" content="493">
+
+
+
+<meta itemprop="keywords" content="tiny6410," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="tiny6410点亮LED"/>
+<meta name="twitter:description" content="裸机程序分为启动代码和C函数 启动代码完成硬件初始化并调用C函数 6410的硬件初始化分为设置CPU（告诉CPU外设的地址范围）和关看门狗（3秒"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">tiny6410点亮LED</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-07-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"> 嵌入式 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>裸机程序分为启动代码和C函数</p>
+<p>启动代码完成硬件初始化并调用C函数</p>
+<p>6410的硬件初始化分为设置CPU（告诉CPU外设的地址范围）和关看门狗（3秒内不关或重置会导致重启）。</p>
+<p>开发板上的LED顺序为：1-2-4-3</p>
+<p>查阅tiny6410核心板可以看出：
+LED1——GPK4;
+LED2——GPK5;
+LED3——GPK6;
+LED4——GPK7;
+且LED为共阳极接法（阳极接1K上拉至VDD_IO 1.2V?），因此端口输出低电平（0）时LED点亮</p>
+<p>查询S3C6410的数据手册可以得到控制GPK端口的寄存器地址如下：</p>
+<table>
+<thead>
+<tr>
+<th>Register</th>
+<th>Address</th>
+<th>R/W</th>
+<th>Description</th>
+<th>Reset Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GPKCON0</td>
+<td>0x7F008800</td>
+<td>R/W</td>
+<td>Port K Configuration Register 0</td>
+<td>0x22222222</td>
+</tr>
+<tr>
+<td>GPKCON1</td>
+<td>0x7F008804</td>
+<td>R/W</td>
+<td>Port K Configuration Register 1</td>
+<td>0x22222222</td>
+</tr>
+<tr>
+<td>GPKDAT</td>
+<td>0x7F008808</td>
+<td>R/W</td>
+<td>Port K Data Register</td>
+<td>Undefined</td>
+</tr>
+<tr>
+<td>GPKPUD</td>
+<td>0x7F00880C</td>
+<td>R/W</td>
+<td>Port K Pull-up/down Register</td>
+<td>0x55555555</td>
+</tr>
+</tbody>
+</table>
+<p>GPKCON0 控制GPK0－7的端口配置，每4位对应一个端口，对于16进制刚好每位对应一个端口，0x1111 0000将GPK4－7设置为输出</p>
+<p>GPKPUD  控制GPK端口的上/下拉，每2位对应一个端口，00禁止，01下拉，10上拉。  0x0000 00000将GPK4－7设置为禁止上下拉</p>
+<p>GPKDAT［0：15］  配置为输出时，向GPKDAT寄存器写数据控制GPK端口输出的高低电平。
+配置为输入时，读GPKDAT寄存器表时端口的状态。  每位对应一个端口。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-07-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tiny6410/">tiny6410</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/s3c6410%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">S3C6410系统结构</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E4%B8%87%E8%83%BD%E7%9A%84makefile/">
+            <span class="next-text nav-default">万能的makefile</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

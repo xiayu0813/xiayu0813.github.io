@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>makefile on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/makefile/</link>
+    <description>Recent content in makefile on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Jul 2014 22:03:48 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/makefile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>万能的makefile</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E4%B8%87%E8%83%BD%E7%9A%84makefile/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:48 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E4%B8%87%E8%83%BD%E7%9A%84makefile/</guid>
+      <description>万能makefile的要点对于不同的项目，同一个makefile经过很少的修改或完全不用修改就可以使用。 具体来说就是能够自动扫描得到项目所包</description>
+    </item>
+    
+  </channel>
+</rss>

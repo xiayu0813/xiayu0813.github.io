@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>linaro ubuntu编译opencv - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="linaro ubuntu编译opencv" />
+<meta property="og:description" content="主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/" />
+<meta property="article:published_time" content="2014-12-03T15:24:54+00:00" />
+<meta property="article:modified_time" content="2014-12-03T15:24:54+00:00" />
+<meta itemprop="name" content="linaro ubuntu编译opencv">
+<meta itemprop="description" content="主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程">
+<meta itemprop="datePublished" content="2014-12-03T15:24:54+00:00" />
+<meta itemprop="dateModified" content="2014-12-03T15:24:54+00:00" />
+<meta itemprop="wordCount" content="789">
+
+
+
+<meta itemprop="keywords" content="linaro,opencv," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="linaro ubuntu编译opencv"/>
+<meta name="twitter:description" content="主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">linaro ubuntu编译opencv</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-12-03 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#系统说明">系统说明</a></li>
+    <li><a href="#准备工作">准备工作</a></li>
+    <li><a href="#安装依赖">安装依赖</a></li>
+    <li><a href="#安装gstreamergtklibjpeg">安装gstreamer、gtk、libjpeg</a></li>
+    <li><a href="#编译安装x264">编译安装x264</a></li>
+    <li><a href="#编译安装ffmpeg">编译安装ffmpeg</a></li>
+    <li><a href="#编译安装v4l">编译安装v4l</a></li>
+    <li><a href="#编译安装opencv">编译安装opencv</a></li>
+    <li><a href="#配置路径">配置路径</a></li>
+    <li><a href="#测试程序">测试程序</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>主要参考：<a href="http://www.eefocus.com/bbs/article_1287_591220.html#top">zedboard板上编译opencv</a></p>
+<p>为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程序，又不想搭建交叉编译环境（装系统+配置太麻烦），想着开发板上也是Ubuntu系统，安装opencv应该没有问题。</p>
+<h2 id="系统说明">系统说明</h2>
+<ul>
+<li>开发板：<a href="http://www.embedsky.com/Index.php?s=/Product/show/id/57.html">天嵌科技E9卡片电脑</a>
+<ul>
+<li>CPU：Freescale i.MX6Q Cortex A9</li>
+<li>内存：2GB　DDR3</li>
+<li>eMMC：8GB</li>
+</ul>
+</li>
+<li>操作系统：Linaro Ubuntu 12.04</li>
+<li>相机：罗技C270网络高清摄像头</li>
+</ul>
+<h2 id="准备工作">准备工作</h2>
+<ul>
+<li>安装libgtk2.0-dev、pkg-config</li>
+</ul>
+<blockquote>
+<p>sudo apt-get install libgtk2.0-dev pkg-config</p>
+</blockquote>
+<ul>
+<li>卸载ffmpeg x264 libx264-dev</li>
+</ul>
+<blockquote>
+<p>sudo apt-get remove ffmpeg x264 libx264-dev</p>
+</blockquote>
+<h2 id="安装依赖">安装依赖</h2>
+<blockquote>
+<p>sudo apt-get install build-essential checkinstall git cmake libjack-jackd2-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libsdl1.2-dev libtheora-dev libva-dev libvdpau-dev libvorbis-dev libx11-dev libxfixes-dev libxvidcore-dev texi2html yasm zlib1g-dev</p>
+</blockquote>
+<p>ps: libfaac-dev 找不到，就不装了，同时安装ffmpeg时要禁用libfaac。</p>
+<h2 id="安装gstreamergtklibjpeg">安装gstreamer、gtk、libjpeg</h2>
+<blockquote>
+<p>sudo apt-get install libgstreamer0.10-0 libgstreamer0.10-dev gstreamer0.10-tools gstreamer0.10-plugins-base libgstreamer-plugins-base0.10-dev gstreamer0.10-plugins-good gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad gstreamer0.10-ffmpeg
+sudo apt-get install libgtk2.0-0 libgtk2.0-dev
+sudo apt-get install libjpeg8 libjpeg8-dev</p>
+</blockquote>
+<h2 id="编译安装x264">编译安装x264</h2>
+<blockquote>
+<p>wget <a href="ftp://ftp.videolan.org/pub/videolan/x264/snapshots/last_stable_x264.tar.bz2">ftp://ftp.videolan.org/pub/videolan/x264/snapshots/last_stable_x264.tar.bz2</a>
+tar xvf last_stable_x264.tar.bz2
+cd x264-snapshot-20141202-2245-stable
+./configure &ndash;enable-shared &ndash;enable-pic
+make
+sudo make install</p>
+</blockquote>
+<h2 id="编译安装ffmpeg">编译安装ffmpeg</h2>
+<blockquote>
+<p>wget <a href="http://ffmpeg.org/releases/ffmpeg-0.11.1.tar.bz2">http://ffmpeg.org/releases/ffmpeg-0.11.1.tar.bz2</a>
+tar xvf ffmpeg-0.11.1.tar.bz2
+cd ffmpeg-0.11.1
+./configure &ndash;enable-gpl &ndash;enable-libmp3lame &ndash;enable-libopencore-amrnb &ndash;enable-libopencore-amrwb &ndash;enable-libtheora &ndash;enable-libvorbis &ndash;enable-libx264 &ndash;enable-libxvid &ndash;enable-nonfree &ndash;enable-postproc &ndash;enable-version3 &ndash;enable-x11grab &ndash;enable-shared &ndash;enable-pic</p>
+</blockquote>
+<h2 id="编译安装v4l">编译安装v4l</h2>
+<blockquote>
+<p>wget <a href="http://www.linuxtv.org/downloads/v4l-utils/v4l-utils-0.8.8.tar.bz2">http://www.linuxtv.org/downloads/v4l-utils/v4l-utils-0.8.8.tar.bz2</a>
+tar xvf v4l-utils-0.8.8.tar.bz2
+cd v4l-utils-0.8.8
+make
+sudo make install</p>
+</blockquote>
+<h2 id="编译安装opencv">编译安装opencv</h2>
+<p>下载<a href="http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/">opencv-unix2.4.9</a>,解压至OpenCV-2.4.9</p>
+<blockquote>
+<p>cd cd OpenCV-2.4.9/
+mkdir build
+cd build
+cmake -D CMAKE_BUILD_TYPE=RELEASE .. (最后有两个点)
+make -j4
+sudo make install</p>
+</blockquote>
+<p>执行cmake命令后在结果里确认以下配置（前面正常安装就没有问题）</p>
+<blockquote>
+<p>found gstreamer-base-0.10
+GTK+ 2.x: YES
+FFMPEG: YES
+GStreamer: YES
+V4L/V4L2: Using libv4l</p>
+</blockquote>
+<h2 id="配置路径">配置路径</h2>
+<blockquote>
+<p>gedit /etc/ld.so.conf.d/opencv.conf</p>
+</blockquote>
+<p>在文件中加入下边语句，保存</p>
+<blockquote>
+<p>/usr/local/lib</p>
+</blockquote>
+<p>然后更新ldconfig</p>
+<blockquote>
+<p>sudo ldconfig /etc/ld.so.conf</p>
+</blockquote>
+<blockquote>
+<p>gedit /etc/bash.bashrc:</p>
+</blockquote>
+<p>在 /etc/bash.bashrc:中加入下边语句并保存</p>
+<blockquote>
+<p>PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig</p>
+</blockquote>
+<p>执行</p>
+<blockquote>
+<p>export PKG_CONFIG_PATH</p>
+</blockquote>
+<h2 id="测试程序">测试程序</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&lt;opencv2/opencv.hpp&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span><span class="cp"></span> <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[]</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// grab one frame from the camera specified via arg[1]
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">camera_id</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+ 
+    <span class="k">if</span> <span class="p">(</span><span class="n">argc</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="n">camera_id</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+ 
+    <span class="n">cv</span><span class="o">::</span><span class="n">VideoCapture</span> <span class="n">cap</span><span class="p">(</span><span class="n">camera_id</span><span class="p">);</span>
+ 
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">cap</span><span class="p">.</span><span class="n">isOpened</span><span class="p">())</span>  <span class="c1">// check if we succeeded
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;failed to open the camera with id %d.</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">camera_id</span><span class="p">);</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// capture one frame
+</span><span class="c1"></span>    <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">frame</span><span class="p">;</span>
+    <span class="n">cap</span> <span class="o">&gt;&gt;</span> <span class="n">frame</span><span class="p">;</span> <span class="c1">// get a new frame from camera
+</span><span class="c1"></span>    
+    <span class="c1">// save to file
+</span><span class="c1"></span>    <span class="n">imwrite</span><span class="p">(</span><span class="s">&#34;camera_captured.png&#34;</span><span class="p">,</span> <span class="n">frame</span><span class="p">);</span>
+ 
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>保存文件名为man.cpp，用gcc编译，生成可执行文件test，运行<code>./test 0</code>当前目录保存获取的图像。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">test</span> <span class="n">main</span><span class="p">.</span><span class="n">cpp</span> <span class="err">`</span><span class="n">pkg</span><span class="o">-</span><span class="n">config</span> <span class="o">--</span><span class="n">cflags</span> <span class="o">--</span><span class="n">libs</span> <span class="n">opencv</span><span class="err">`</span>
+<span class="p">.</span><span class="o">/</span><span class="n">test</span> <span class="mi">0</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-12-03
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/linaro/">linaro</a>
+          <a href="/tags/opencv/">opencv</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">OpenWrt编译</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/wiki/c%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+            <span class="next-text nav-default">C语言基础</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

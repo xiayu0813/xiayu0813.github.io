@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/c#/</link>
+    <description>Recent content in C# on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Jul 2014 22:03:00 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/c#/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>委托的理解</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/csharp/%E5%A7%94%E6%89%98%E7%9A%84%E7%90%86%E8%A7%A3/</link>
+      <pubDate>Sat, 26 Jul 2014 22:03:00 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/csharp/%E5%A7%94%E6%89%98%E7%9A%84%E7%90%86%E8%A7%A3/</guid>
+      <description>程序是对现实世界的抽象,就是一个人A委托另一个人B去干个啥事,A只是发出命令,具体的事是由B来完成的. 在程序世界里委托只是存储了各个方法的地</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>FreeRTOS移植-系统基础 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="FreeRTOS移植-系统基础" />
+<meta property="og:description" content="编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/" />
+<meta property="article:published_time" content="2014-08-31T09:47:43+00:00" />
+<meta property="article:modified_time" content="2014-08-31T09:47:43+00:00" />
+<meta itemprop="name" content="FreeRTOS移植-系统基础">
+<meta itemprop="description" content="编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表">
+<meta itemprop="datePublished" content="2014-08-31T09:47:43+00:00" />
+<meta itemprop="dateModified" content="2014-08-31T09:47:43+00:00" />
+<meta itemprop="wordCount" content="890">
+
+
+
+<meta itemprop="keywords" content="FreeRTOS," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="FreeRTOS移植-系统基础"/>
+<meta name="twitter:description" content="编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">FreeRTOS移植-系统基础</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-08-31 </span>
+        <div class="post-category">
+            <a href="/categories/freertos%E7%A7%BB%E6%A4%8D/"> FreeRTOS移植 </a>
+            <a href="/categories/%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/"> 系统基础 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#编码标准和命名惯例">编码标准和命名惯例</a></li>
+    <li><a href="#任务和协程">任务和协程</a></li>
+    <li><a href="#任务间通信">任务间通信</a></li>
+    <li><a href="#系统文件结构">系统文件结构</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="编码标准和命名惯例">编码标准和命名惯例</h2>
+<ol>
+<li>编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。</li>
+<li>在变量名前使用u、ul、p等表示变量类型，x表示系统自定义的类型。</li>
+<li>函数名前缀prv(private)表示文件中的static函数。</li>
+<li>系统API函数前缀有返回数型和所在的文件，例如vTaskDelete在task.c文件中定义，返回void。</li>
+<li>宏的小写前缀表示所在的定义头文件，如configUSE_PREEMPTION</li>
+</ol>
+<h2 id="任务和协程">任务和协程</h2>
+<ol>
+<li>协程用于小型处理器，目前用的比较少。主要特点是所有的协程使用一个栈，而每一个任务具有独立的栈。</li>
+<li>任务有Ready,Running,Blocked,Suspended四种状态，如下图所示：<img src="/images/FreeRTOS_TaskState.gif" alt="taskstate"></li>
+<li>任务具用0-configMAX_PRIORTIES-1个优先级，不同的任务可以具有相同的优先级。</li>
+<li>数字越小，优先级越低。空闲任务的优先级是0。</li>
+<li>任务的形式：</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c">    <span class="kt">void</span> <span class="nf">vATaskFunction</span><span class="p">(</span> <span class="kt">void</span> <span class="o">*</span><span class="n">pvParameters</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span><span class="p">(</span> <span class="p">;;</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="o">--</span> <span class="n">Task</span> <span class="n">application</span> <span class="n">code</span> <span class="n">here</span><span class="p">.</span> <span class="o">--</span>
+        <span class="p">}</span>
+
+        <span class="cm">/* Tasks must not attempt to return from their implementing
+</span><span class="cm">        function or otherwise exit.  In newer FreeRTOS port
+</span><span class="cm">        attempting to do so will result in an configASSERT() being
+</span><span class="cm">        called if it is defined.  If it is necessary for a task to
+</span><span class="cm">        exit then have the task call vTaskDelete( NULL ) to ensure
+</span><span class="cm">        its exit is clean. */</span>
+        <span class="n">vTaskDelete</span><span class="p">(</span> <span class="nb">NULL</span> <span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="任务间通信">任务间通信</h2>
+<ol>
+<li>FreeRTOS提供队列(Queues)、二进制信号量(Binay Semaphores)、计数信号量(Counting Semaphores)、互斥量(Mutexes)和递归互斥量(Recursive Mutexes)。</li>
+<li>队列传递的是数据的拷贝，同时也可以传递引用。对于指针，队列传递是指针的拷贝而不是所指向内容的拷贝。</li>
+<li>二进制信号量和互斥量的不同：互斥量具有优先级继承机制（高优先级可以中断低优先级），这使得二进制信号量更适用于同步，互斥量更适用于互斥；互斥具有令牌（token）,二进制信号量没有。</li>
+</ol>
+<h2 id="系统文件结构">系统文件结构</h2>
+<ol>
+<li>FreeRTOS的系统文件比较少，用到的c文件有tasks.c(任务创建、调度、销毁等相关操作)、queue.c(消息队列的实现)、list.c(链表相关操作)、port.c(硬件相关的系统操作)、heap_x.c(x=1~5，用于内存管理，各不相同)。</li>
+<li>FreeRTOS的代码组织比较清晰，详见<a href="http://www.freertos.org/a00017.html">Source Organization</a></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-08-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/freertos/">FreeRTOS</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-stm32f103/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">FreeRTOS移植-STM32F103</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/wiki/git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+            <span class="next-text nav-default">git常用命令</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

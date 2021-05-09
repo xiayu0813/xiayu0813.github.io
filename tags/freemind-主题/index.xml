@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>freemind 主题 on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/freemind-%E4%B8%BB%E9%A2%98/</link>
+    <description>Recent content in freemind 主题 on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 16 Aug 2014 16:43:05 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/freemind-%E4%B8%BB%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对freemind主题所做的修改</title>
+      <link>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/%E5%AF%B9freemind%E4%B8%BB%E9%A2%98%E6%89%80%E5%81%9A%E7%9A%84%E4%BF%AE%E6%94%B9/</link>
+      <pubDate>Sat, 16 Aug 2014 16:43:05 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%8D%9A%E5%AE%A2/%E5%AF%B9freemind%E4%B8%BB%E9%A2%98%E6%89%80%E5%81%9A%E7%9A%84%E4%BF%AE%E6%94%B9/</guid>
+      <description>现已改用Jackman主题（做了些许修改）* 修改分类方式 原主题的侧边样的分类是无层次的分类，在此改为层次型的分类方式，好在hexo原本就支持</description>
+    </item>
+    
+  </channel>
+</rss>

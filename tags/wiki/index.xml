@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wiki on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/wiki/</link>
+    <description>Recent content in wiki on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 17 Jun 2020 08:35:15 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>清理虚拟机空间</title>
+      <link>http://www.aaronxia.com/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/</link>
+      <pubDate>Wed, 17 Jun 2020 08:35:15 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/%E6%B8%85%E7%90%86%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%A9%BA%E9%97%B4/</guid>
+      <description>清理虚拟机的空间 vmware下的虚拟机长时间使用后会变大，可以清理不用的空间，减少磁盘占用，便于复制。 当前使用的虚拟机为manjaro lin</description>
+    </item>
+    
+  </channel>
+</rss>

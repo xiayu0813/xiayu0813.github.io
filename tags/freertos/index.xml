@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeRTOS on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/tags/freertos/</link>
+    <description>Recent content in FreeRTOS on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 14 Sep 2014 09:20:22 +0000</lastBuildDate><atom:link href="http://www.aaronxia.com/tags/freertos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreeRTOS移植-STM32F103</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-stm32f103/</link>
+      <pubDate>Sun, 14 Sep 2014 09:20:22 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-stm32f103/</guid>
+      <description>移植环境说明 keil MDK 4.74 FreeRTOS v8.12 移植目标：STM32F103CBT6 使用STM32F10x标准固件库3.5：STM32F10x_StdPeriph_L</description>
+    </item>
+    
+    <item>
+      <title>FreeRTOS移植-系统基础</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 31 Aug 2014 09:47:43 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/freertos%E7%A7%BB%E6%A4%8D/freertos%E7%A7%BB%E6%A4%8D-%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80/</guid>
+      <description>编码标准和命名惯例 编码基本符合MISRA标准，除在stdint.h文件中定义的一些类型外，使用C99标准语法。 在变量名前使用u、ul、p等表</description>
+    </item>
+    
+  </channel>
+</rss>

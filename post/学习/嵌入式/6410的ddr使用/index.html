@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>6410的DDR使用 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="6410使用DRAM控制器对DDR进行操作。在程序开始时要根据DDR的参数设置DRAM控制器。 （DDR SDRAM：Double Rate Synchronous Dynamic Random Access Me" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/6410%E7%9A%84ddr%E4%BD%BF%E7%94%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="6410的DDR使用" />
+<meta property="og:description" content="6410使用DRAM控制器对DDR进行操作。在程序开始时要根据DDR的参数设置DRAM控制器。 （DDR SDRAM：Double Rate Synchronous Dynamic Random Access Me" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/6410%E7%9A%84ddr%E4%BD%BF%E7%94%A8/" />
+<meta property="article:published_time" content="2014-07-26T22:03:48+00:00" />
+<meta property="article:modified_time" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="name" content="6410的DDR使用">
+<meta itemprop="description" content="6410使用DRAM控制器对DDR进行操作。在程序开始时要根据DDR的参数设置DRAM控制器。 （DDR SDRAM：Double Rate Synchronous Dynamic Random Access Me">
+<meta itemprop="datePublished" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="dateModified" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="wordCount" content="388">
+
+
+
+<meta itemprop="keywords" content="tiny6410," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="6410的DDR使用"/>
+<meta name="twitter:description" content="6410使用DRAM控制器对DDR进行操作。在程序开始时要根据DDR的参数设置DRAM控制器。 （DDR SDRAM：Double Rate Synchronous Dynamic Random Access Me"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">6410的DDR使用</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-07-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"> 嵌入式 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#dram控制器初始化顺序">DRAM控制器初始化顺序</a></li>
+    <li><a href="#ddr移动ddr-sdram初始化顺序">DDR/移动DDR SDRAM初始化顺序</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>6410使用DRAM控制器对DDR进行操作。在程序开始时要根据DDR的参数设置DRAM控制器。
+（DDR SDRAM：Double Rate Synchronous Dynamic Random Access Memory双倍速率传输，在时钟的上升沿和下降沿均可传输数据）
+tiny6410使用两片16位的DDR组成32位的内存。</p>
+<p><em>初始化内容</em> ：</p>
+<ol>
+<li>地址线设置</li>
+<li>位宽</li>
+<li>设置时序</li>
+</ol>
+<h2 id="dram控制器初始化顺序">DRAM控制器初始化顺序</h2>
+<ol>
+<li>以‘3’b100’执行memc_cmd，使得DRAM 控制器输入‘配置’状态。</li>
+<li>写存储器时间参数，芯片配置和ID 配置寄存器。</li>
+<li>等待200μs 来使SDRAM 电源和时钟稳定。当CPU 开始工作时，电源和时钟已经被稳定下来。</li>
+<li>执行存储器初始化顺序。</li>
+<li>以‘3’b000’执行memc_cmd，使得DRAM 控制器输入‘准备’状态。</li>
+<li>在memc_stat 中检查存储器状态域，直到存储器状态变为‘2’b01’，即‘准备’</li>
+</ol>
+<h2 id="ddr移动ddr-sdram初始化顺序">DDR/移动DDR SDRAM初始化顺序</h2>
+<ol>
+<li>在direct_cmLatency</li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-07-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tiny6410/">tiny6410</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%8D%9A%E5%AE%A2/%E5%AF%B9freemind%E4%B8%BB%E9%A2%98%E6%89%80%E5%81%9A%E7%9A%84%E4%BF%AE%E6%94%B9/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">对freemind主题所做的修改</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/arm%E5%85%B3%E9%94%AE%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4/">
+            <span class="next-text nav-default">ARM关键汇编指令</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

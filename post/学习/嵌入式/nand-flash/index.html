@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>NAND FLASH - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="Nand flash 只有8条地址线，需要分别发出地址256M * 8bit 特点 命令、地址、数据复用：CLE为高表示发送的是命令，ALE为高表示发送的是地址，两者均为低" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/nand-flash/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="NAND FLASH" />
+<meta property="og:description" content="Nand flash 只有8条地址线，需要分别发出地址256M * 8bit 特点 命令、地址、数据复用：CLE为高表示发送的是命令，ALE为高表示发送的是地址，两者均为低" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/nand-flash/" />
+<meta property="article:published_time" content="2014-07-26T22:03:48+00:00" />
+<meta property="article:modified_time" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="name" content="NAND FLASH">
+<meta itemprop="description" content="Nand flash 只有8条地址线，需要分别发出地址256M * 8bit 特点 命令、地址、数据复用：CLE为高表示发送的是命令，ALE为高表示发送的是地址，两者均为低">
+<meta itemprop="datePublished" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="dateModified" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="wordCount" content="364">
+
+
+
+<meta itemprop="keywords" content="tiny6410," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NAND FLASH"/>
+<meta name="twitter:description" content="Nand flash 只有8条地址线，需要分别发出地址256M * 8bit 特点 命令、地址、数据复用：CLE为高表示发送的是命令，ALE为高表示发送的是地址，两者均为低"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">NAND FLASH</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-07-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            <a href="/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"> 嵌入式 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#特点">特点</a></li>
+    <li><a href="#读写">读写</a></li>
+    <li><a href="#地址">地址</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>Nand flash  只有8条地址线，需要分别发出地址256M * 8bit</p>
+<h2 id="特点">特点</h2>
+<ul>
+<li>命令、地址、数据复用：CLE为高表示发送的是命令，ALE为高表示发送的是地址，两者均为低表示发送的是数据。</li>
+<li>地址：多次发出 5个周期</li>
+<li>片选信号，读写信号、ready/busy信号</li>
+</ul>
+<h2 id="读写">读写</h2>
+<ul>
+<li>6410里有Nand Flash控制器，只需将信号写入相应的寄存器</li>
+<li>Nand Flash控制器使用HCLK</li>
+<li>初始化控制器：时间参数，使能片选引脚</li>
+<li>写命令、地址，读写数据</li>
+</ul>
+<h2 id="地址">地址</h2>
+<ul>
+<li>256M的NandFlash,需要发28位地址，只有8位地址线，发送5次</li>
+<li>前两个周期发送A0~A11，为页内地址：0~2011（2048+64-1）</li>
+<li>3、4、5周期发送A12~A28，为行地址，决定访问哪一页</li>
+<li>比如访问地址为8000的内容，8000/2048=3.9，说明访问的是第三页，8000-3*2048=1856，说明访问的页内地址为1856</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-07-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/tiny6410/">tiny6410</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/cc&#43;&#43;/mfc%E7%9A%84%E7%BA%BF%E7%A8%8B/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">MFC的线程</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/s3c6410%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">
+            <span class="next-text nav-default">S3C6410系统结构</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

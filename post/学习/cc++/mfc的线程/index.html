@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MFC的线程 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="MFC的线程 MFC的线程分为用户界面线程和辅助线程，用户界面线程有消息响应机制，而普通的辅助线程没有消息响应。 在MFC中，一般用全局函数Af" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/cc&#43;&#43;/mfc%E7%9A%84%E7%BA%BF%E7%A8%8B/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="MFC的线程" />
+<meta property="og:description" content="MFC的线程 MFC的线程分为用户界面线程和辅助线程，用户界面线程有消息响应机制，而普通的辅助线程没有消息响应。 在MFC中，一般用全局函数Af" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/cc&#43;&#43;/mfc%E7%9A%84%E7%BA%BF%E7%A8%8B/" />
+<meta property="article:published_time" content="2014-07-26T22:03:48+00:00" />
+<meta property="article:modified_time" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="name" content="MFC的线程">
+<meta itemprop="description" content="MFC的线程 MFC的线程分为用户界面线程和辅助线程，用户界面线程有消息响应机制，而普通的辅助线程没有消息响应。 在MFC中，一般用全局函数Af">
+<meta itemprop="datePublished" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="dateModified" content="2014-07-26T22:03:48+00:00" />
+<meta itemprop="wordCount" content="696">
+
+
+
+<meta itemprop="keywords" content="MFC," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MFC的线程"/>
+<meta name="twitter:description" content="MFC的线程 MFC的线程分为用户界面线程和辅助线程，用户界面线程有消息响应机制，而普通的辅助线程没有消息响应。 在MFC中，一般用全局函数Af"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">MFC的线程</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-07-26 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            <a href="/categories/c&#43;&#43;/"> C&#43;&#43; </a>
+            <a href="/categories/mfc/"> MFC </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents"></nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="mfc的线程">MFC的线程</h1>
+<p>MFC的线程分为用<em>户界面线程</em>和<em>辅助线程</em>，用户界面线程有消息响应机制，而普通的辅助线程没有消息响应。</p>
+<p>在MFC中，一般用全局函数<code>AfxBeginThread()</code>来创建并初始化一个线程的运行，该函数有两种重载形式，分别用于创建工作者线程和用户界面线程。两种重载函数原型和参数分别说明如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">CWinThread</span><span class="o">*</span> <span class="nf">AfxBeginThread</span><span class="p">(</span>
+        <span class="n">AFX_THREADPROC</span> <span class="n">pfnThreadProc</span><span class="p">,</span>
+        <span class="n">LPVOID</span> <span class="n">pParam</span><span class="p">,</span>
+        <span class="kt">int</span> <span class="n">nPriority</span> <span class="o">=</span> <span class="n">THREAD_PRIORITY_NORMAL</span><span class="p">,</span>
+        <span class="n">UNT</span> <span class="n">nStackSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">DWORD</span> <span class="n">dwCreateFlags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">LPSECURITY_ATTRIBUTES</span> <span class="n">lpSecurityAttrs</span> <span class="o">=</span> <span class="nb">NULL</span>
+       <span class="p">);</span><span class="c1">//用于创建工作者线程
+</span></code></pre></td></tr></table>
+</div>
+</div><p>　　PfnThreadProc:指向工作者线程的执行函数的指针，线程函数原型必须声明如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++">　　<span class="n">_UINT</span> <span class="nf">ExecutingFunction</span><span class="p">(</span><span class="n">LPVOID</span> <span class="n">pParam</span><span class="p">);</span><span class="n">_</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>　　请注意，ExecutingFunction()应返回一个UINT类型的值，用以指明该函数结束的原因。一般情况下，返回0表明执行成功。</p>
+<ul>
+<li>pParam：一个32位参数，执行函数将用某种方式解释该值。它可以是数值，或是指向一个结构的指针，甚至可以被忽略；</li>
+<li>nPriority：线程的优先级。如果为0，则线程与其父线程具有相同的优先级；</li>
+<li>nStackSize:线程为自己分配堆栈的大小，其单位为字节。如</li>
+<li>nStackSize被设为0，则线程的堆栈被设置成与父线程堆栈相同大小；</li>
+<li>dwCreateFlags：如果为0，则线程在创建后立刻开始执行。如果</li>
+<li>CREATE_SUSPEND，则线程在创建后立刻被挂起；</li>
+<li>lpSecurityAttrs：线程的安全属性指针，一般为NULL；</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c++" data-lang="c++">    <span class="n">CWinThread</span><span class="o">*</span> <span class="nf">AfxBeginThread</span><span class="p">(</span>
+                <span class="n">CRuntimeClass</span><span class="o">*</span> <span class="n">pThreadClass</span><span class="p">,</span>
+       　　 　　<span class="kt">int</span> <span class="n">nPriority</span> <span class="o">=</span> <span class="n">THREAD_PRIORITY_NORMAL</span><span class="p">,</span>
+       　　　　 <span class="n">UNT</span> <span class="n">nStackSize</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+       　　　　 <span class="n">DWORD</span> <span class="n">dwCreateFlags</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+       　　　　 <span class="n">LPSECURITY_ATTRIBUTES</span> <span class="n">lpSecurityAttrs</span> <span class="o">=</span> <span class="nb">NULL</span>
+      　　　　 <span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>pThreadClass 是指向 CWinThread 的一个导出类的运行时类对象的指针，该导出类定义了被创建的用户界面线程的启动、退出等；其它参数的意义同形式1。使用函数的这个原型生成的线程也有消息机制，在以后的例子中我们将发现同主线程的机制几乎一样。</p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-07-26
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/mfc/">MFC</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/gunarm%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0%E9%97%AE%E9%A2%98%E5%8F%8A%E6%96%B9%E6%B3%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">GUNARM汇编语言学习问题及方法</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E5%AD%A6%E4%B9%A0/%E5%B5%8C%E5%85%A5%E5%BC%8F/nand-flash/">
+            <span class="next-text nav-default">NAND FLASH</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

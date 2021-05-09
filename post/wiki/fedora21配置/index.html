@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>fedora21配置 - Aaron&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="夏雨" /><meta name="description" content="安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.78.2 with theme even" />
+
+
+<link rel="canonical" href="http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+<meta property="og:title" content="fedora21配置" />
+<meta property="og:description" content="安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/" />
+<meta property="article:published_time" content="2014-12-27T09:58:14+00:00" />
+<meta property="article:modified_time" content="2014-12-27T09:58:14+00:00" />
+<meta itemprop="name" content="fedora21配置">
+<meta itemprop="description" content="安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu">
+<meta itemprop="datePublished" content="2014-12-27T09:58:14+00:00" />
+<meta itemprop="dateModified" content="2014-12-27T09:58:14+00:00" />
+<meta itemprop="wordCount" content="618">
+
+
+
+<meta itemprop="keywords" content="fedora21,系统配置," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="fedora21配置"/>
+<meta name="twitter:description" content="安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Aaron</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">主页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Aaron</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">主页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">关于</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">fedora21配置</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2014-12-27 </span>
+        <div class="post-category">
+            <a href="/categories/wiki/"> wiki </a>
+            <a href="/categories/linux/"> linux </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装gnome配置工具">安装gnome配置工具</a></li>
+    <li><a href="#yum使用axel多线程下载">yum使用axel多线程下载</a></li>
+    <li><a href="#添加右键打开命令行终端">添加右键打开命令行终端</a></li>
+    <li><a href="#选择最快的软件源">选择最快的软件源</a></li>
+    <li><a href="#修改grub默认启动win7">修改grub默认启动win7</a></li>
+    <li><a href="#安装fcitx五笔输入法">安装fcitx五笔输入法</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h2 id="安装gnome配置工具">安装gnome配置工具</h2>
+<pre><code>sudo yum install gnome-tweak-tool
+</code></pre>
+<p>可以开启桌面标、窗口最大最小化按钮和一些shell扩展。</p>
+<h2 id="yum使用axel多线程下载">yum使用axel多线程下载</h2>
+<pre><code>sudo yum install axel yum-axelget
+</code></pre>
+<p>测试了下安装<code>yum-axelget</code>没有作用，还是要用老方法：</p>
+<blockquote>
+<p>yum install axel
+wget <a href="http://cnfreesoft.googlecode.com/svn/trunk/axelget/axelget.conf">http://cnfreesoft.googlecode.com/svn/trunk/axelget/axelget.conf</a>
+wget <a href="http://cnfreesoft.googlecode.com/svn/trunk/axelget/axelget.py">http://cnfreesoft.googlecode.com/svn/trunk/axelget/axelget.py</a>
+cp axelget.conf /etc/yum/pluginconf.d
+cp axelget.py /usr/lib/yum-plugins</p>
+</blockquote>
+<h2 id="添加右键打开命令行终端">添加右键打开命令行终端</h2>
+<blockquote>
+<p>yum install nautilus-open-terminal</p>
+</blockquote>
+<h2 id="选择最快的软件源">选择最快的软件源</h2>
+<blockquote>
+<p>yum install yum-fastestmirror</p>
+</blockquote>
+<h2 id="修改grub默认启动win7">修改grub默认启动win7</h2>
+<p>修改<code>/etc/grub.d</code>中的配置文件顺序，将win7的启动项放在第一位。
+ps: 我的是win7 x64和fedora21 64位双系统，如果还有其他linux系统的话不知道行不行。</p>
+<blockquote>
+<p>cd /etc/grub.d/
+mkdir bak
+cp * bak/
+mv 10_linux 20_linux
+mv 30_os-prober 10_os-prober
+grub2-mkconfig -o /boot/grub2/grub.cfg</p>
+</blockquote>
+<p>在升级kernel后再执行<code>grub2-mkconfig -o /boot/grub2/grub.cfg</code>命令即可。</p>
+<p>另外一种设置默认启动项的方法是（也是官方文档给出的方法）：
+ps:在我当前的环境下不起作用，不知道怎么回事，fedora20是可以的。</p>
+<blockquote>
+<p>cat /boot/grub2/grub.cfg | grep windows</p>
+</blockquote>
+<p>结果是：</p>
+<blockquote>
+<p>menuentry &lsquo;Windows Vista (loader) (on /dev/sda1)&rsquo; &ndash;class windows &ndash;class os $menuentry_id_option &lsquo;osprober-chain-0E1604A416048EC1&rsquo; {</p>
+</blockquote>
+<p>接下来使用<code>grub2-set-default</code>命令来设置默认启动项，参数是上个命令输出结果单引号里面的内容。最后再使用<code>grub2-mkconfig</code>来更新<code>grub.cfg</code>文件。</p>
+<blockquote>
+<p>grub2-set-default &lsquo;Windows Vista (loader) (on /dev/sda1)&rsquo;
+grub2-mkconfig -o /boot/grub2/grub.cfg</p>
+</blockquote>
+<h2 id="安装fcitx五笔输入法">安装fcitx五笔输入法</h2>
+<ul>
+<li>卸载自带的ibus输入法</li>
+</ul>
+<blockquote>
+<p>sudo yum remove ibus
+gsettings set org.gnome.settings-daemon.plugins.keyboard active false</p>
+</blockquote>
+<ul>
+<li>安装fcitx</li>
+</ul>
+<blockquote>
+<p>sudo yum install fcitx fcitx-configtool fcitx-table-chinese</p>
+</blockquote>
+<ul>
+<li>配置环境变量
+在~/.bashrc中添加如下内容,注消或重启。</li>
+</ul>
+<blockquote>
+<p>export GTK_IM_MODULE=fcitx<br>
+export QT_IM_MODULE=fcitx<br>
+export XMODIFIERS=&quot;@im=fcitx&quot;</p>
+</blockquote>
+<ul>
+<li>配置新世纪五笔码表
+将码表文件wbpy.mb放入~/.config/fcitx/table中,重启fcitx。</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">夏雨</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2014-12-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/fedora21/">fedora21</a>
+          <a href="/tags/%E7%B3%BB%E7%BB%9F%E9%85%8D%E7%BD%AE/">系统配置</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/%E5%AD%A6%E4%B9%A0/ros/ros%E5%AE%89%E8%A3%85/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">ROS安装</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/%E6%8A%98%E8%85%BE/openwrt/openwrt%E7%BC%96%E8%AF%91/">
+            <span class="next-text nav-default">OpenWrt编译</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="http://localhost:1313" class="iconfont icon-itlab" title="itlab"></a>
+      <a href="xia_yu0813@126.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/xiayu0813" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="http://www.aaronxia.com/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018 - 
+    2021<span class="heart"><i class="iconfont icon-heart"></i></span><span>夏雨</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Aaron&#39;s Blog</title>
+    <link>http://www.aaronxia.com/categories/linux/</link>
+    <description>Recent content in linux on Aaron&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 22 Nov 2020 22:59:17 +0800</lastBuildDate><atom:link href="http://www.aaronxia.com/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>manjaro配置</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 22 Nov 2020 22:59:17 +0800</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/manjaro%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装vim pacman -S vim 安装AUR源管理工具 sudo pacman -S yay 配置archlinuxcn aur源 编辑/etc/pacman.conf，在最后添加 1 2 3 4 5 6 [archlinuxcn]</description>
+    </item>
+    
+    <item>
+      <title>fedora21配置</title>
+      <link>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 27 Dec 2014 09:58:14 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/wiki/fedora21%E9%85%8D%E7%BD%AE/</guid>
+      <description>安装gnome配置工具 sudo yum install gnome-tweak-tool 可以开启桌面标、窗口最大最小化按钮和一些shell扩展。 yum使用axel多线程下载 sudo yum install axel yum-axelget 测试了下安装yu</description>
+    </item>
+    
+    <item>
+      <title>linaro ubuntu编译opencv</title>
+      <link>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/</link>
+      <pubDate>Wed, 03 Dec 2014 15:24:54 +0000</pubDate>
+      
+      <guid>http://www.aaronxia.com/post/%E5%AD%A6%E4%B9%A0/linux/linaro-ubuntu%E7%BC%96%E8%AF%91opencv/</guid>
+      <description>主要参考：zedboard板上编译opencv 为了验证相机能否在开发板上使用，一开始使用V4L2程序无法读出图像，又找到一段opencv的程</description>
+    </item>
+    
+  </channel>
+</rss>
