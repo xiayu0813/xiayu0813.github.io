@@ -94,6 +94,10 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
   * 安装主题powerlevel10k
   `git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k`
 
+  * 安装zsh代理插件zhs-proxy
+  `git clone https://github.com/sukkaw/zsh-proxy.git ~/.oh-my-zsh/custom/plugins/zsh-proxy`
+  安装完成后配置插件，运行`init_proxy`初始化，运行`config_proxy`配置代理IP，运行`proxy`启动代理，运行`noproxy`关闭代理
+
   * 安装autojump
   `yay -S autojump`
 
@@ -105,7 +109,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
   * 配置*.zshrc*，主要配置主题和插件
   ZSH_THEME="powerlevel10k/powerlevel10k"
-  plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
+  plugins=(git autojump zsh-autosuggestions zsh-syntax-highlighting zsh-completions zsh-proxy)
 
   重新加载配置`autoload -U compinit && compinit`
 
